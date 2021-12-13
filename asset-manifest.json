@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fauzanfa/static/css/main.a617e044.chunk.css",
+    "main.js": "/fauzanfa/static/js/main.112d7bbf.chunk.js",
+    "main.js.map": "/fauzanfa/static/js/main.112d7bbf.chunk.js.map",
+    "runtime-main.js": "/fauzanfa/static/js/runtime-main.7696e8fc.js",
+    "runtime-main.js.map": "/fauzanfa/static/js/runtime-main.7696e8fc.js.map",
+    "static/js/2.860ecb61.chunk.js": "/fauzanfa/static/js/2.860ecb61.chunk.js",
+    "static/js/2.860ecb61.chunk.js.map": "/fauzanfa/static/js/2.860ecb61.chunk.js.map",
+    "static/js/3.f3fd993a.chunk.js": "/fauzanfa/static/js/3.f3fd993a.chunk.js",
+    "static/js/3.f3fd993a.chunk.js.map": "/fauzanfa/static/js/3.f3fd993a.chunk.js.map",
+    "index.html": "/fauzanfa/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/fauzanfa/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.860ecb61.chunk.js.LICENSE.txt": "/fauzanfa/static/js/2.860ecb61.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/fauzanfa/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7696e8fc.js",
+    "static/js/2.860ecb61.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.112d7bbf.chunk.js"
+  ]
+}
