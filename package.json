@@ -1,0 +1,23 @@
+{
+  "name": "dadangdut33.github.io",
+  "version": "1.0.0",
+  "description": "Github profile (static)",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dadangdut33/dadangdut33.github.io.git"
+  },
+  "author": "Dadangdut33",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dadangdut33/dadangdut33.github.io/issues"
+  },
+  "homepage": "https://github.com/Dadangdut33/dadangdut33.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "create-react-app": "^4.0.3"
+  }
+}
