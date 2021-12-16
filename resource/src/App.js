@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+// import $ from "jquery";
+// import Popper from "popper.js";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./index.css";
+import Header from "./Components/Header/Header.jsx";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<main>
+			<Header />
+			<div className='App'>
+				<h1>Hello World!</h1>
+				<h2>My first react App!</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Ipsum a totam libero natus voluptate ducimus soluta, in qui.
+					Explicabo repellat eveniet placeat obcaecati autem ducimus
+					aliquid illum beatae consequuntur commodi?
+				</p>
+			</div>
+			<Footer />
+		</main>
+	);
 }
 
 export default App;
