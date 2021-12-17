@@ -65,7 +65,6 @@ export default function DarkModeToggle() {
 	};
 
 	setup();
-	console.log(isChecked);
 
 	return (
 		<div className='form-check form-switch ms-auto mt-3 me-3'>

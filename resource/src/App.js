@@ -8,9 +8,9 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
 	return (
-		<main>
+		<>
 			<Header />
-			<div className='App'>
+			<main className='App'>
 				<h1>Hello World!</h1>
 				<h2>My first react App!</h2>
 				<p>
@@ -19,9 +19,9 @@ function App() {
 					Explicabo repellat eveniet placeat obcaecati autem ducimus
 					aliquid illum beatae consequuntur commodi?
 				</p>
-			</div>
+			</main>
 			<Footer />
-		</main>
+		</>
 	);
 }
 
