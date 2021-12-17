@@ -1,6 +1,10 @@
 import $ from "jquery";
+import React from "react";
 export default function DarkModeToggle() {
-	var isChecked = localStorage.getItem("bgmode") === "dark" ? true : false;
+	const [checked, setChecked] = React.useState(
+		localStorage.getItem("bgmode") === "dark" ? true : false
+	);
+
 	const setDarkMode = () => {
 		document.querySelectorAll(".bg-light").forEach((element) => {
 			element.className = element.className.replace(/-light/g, "-dark");
@@ -32,8 +36,10 @@ export default function DarkModeToggle() {
 		localStorage.setItem("bgmode", newMode);
 
 		if (newMode === "dark") {
+			setChecked(true);
 			setDarkMode();
 		} else {
+			setChecked(false);
 			setLightMode();
 		}
 	};
@@ -42,7 +48,8 @@ export default function DarkModeToggle() {
 		return window.matchMedia("(prefers-color-scheme: dark)").matches;
 	};
 
-	const setup = () => {
+	React.useEffect(() => {
+		console.log("DarkModeToggle useEffect");
 		var currentMode = localStorage.getItem("bgmode");
 		if (currentMode == null) {
 			currentMode = getSystemDefaultTheme();
@@ -51,7 +58,8 @@ export default function DarkModeToggle() {
 		}
 
 		if (currentMode === "dark") {
-			isChecked = true;
+			// isChecked = true;
+			setChecked(true);
 			var checkExist = setInterval(function () {
 				if ($(".bg-light").length) {
 					clearInterval(checkExist);
@@ -59,12 +67,11 @@ export default function DarkModeToggle() {
 				}
 			}, 100); // check every 100ms
 		} else {
-			isChecked = false;
+			// isChecked = false;
+			setChecked(false);
 			setLightMode();
 		}
-	};
-
-	setup();
+	}, []);
 
 	return (
 		<div className='form-check form-switch ms-auto mt-3 me-3'>
@@ -85,7 +92,7 @@ export default function DarkModeToggle() {
 				type={"checkbox"}
 				id='lightSwitch'
 				onChange={toggleBgMode}
-				defaultChecked={isChecked}
+				checked={checked}
 				style={{ marginTop: "7px", marginLeft: "0px" }}
 			/>
 		</div>
