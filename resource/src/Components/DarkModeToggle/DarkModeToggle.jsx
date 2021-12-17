@@ -8,9 +8,11 @@ export default function DarkModeToggle() {
 		localStorage.getItem("bgmode") === "dark" ? true : false
 	);
 
-	const [logo, setLogo] = React.useState(lightLogo);
+	const [logo, setLogo] = React.useState(checked ? darkLogo : lightLogo);
 
 	const setDarkMode = () => {
+		setChecked(true);
+		setLogo(darkLogo);
 		document.querySelectorAll(".bg-light").forEach((element) => {
 			element.className = element.className.replace(/-light/g, "-dark");
 		});
@@ -21,9 +23,14 @@ export default function DarkModeToggle() {
 		} else {
 			document.body.classList.add("text-light");
 		}
+
+		document.body.classList.remove("light-scroll");
+		document.body.classList.add("dark-scroll");
 	};
 
 	const setLightMode = () => {
+		setChecked(false);
+		setLogo(lightLogo);
 		document.querySelectorAll(".bg-dark").forEach((element) => {
 			element.className = element.className.replace(/-dark/g, "-light");
 		});
@@ -33,6 +40,9 @@ export default function DarkModeToggle() {
 		} else {
 			document.body.classList.add("text-dark");
 		}
+
+		document.body.classList.remove("dark-scroll");
+		document.body.classList.add("light-scroll");
 	};
 
 	const toggleBgMode = () => {
@@ -41,12 +51,8 @@ export default function DarkModeToggle() {
 		localStorage.setItem("bgmode", newMode);
 
 		if (newMode === "dark") {
-			setChecked(true);
-			setLogo(darkLogo);
 			setDarkMode();
 		} else {
-			setChecked(false);
-			setLogo(lightLogo);
 			setLightMode();
 		}
 	};
@@ -73,8 +79,6 @@ export default function DarkModeToggle() {
 				}
 			}, 100); // check every 100ms
 		} else {
-			setChecked(false);
-			setLogo(lightLogo);
 			setLightMode();
 		}
 	}, []);

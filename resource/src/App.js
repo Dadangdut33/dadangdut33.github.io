@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./index.css";
 import Header from "./Components/Header/Header.jsx";
-import Footer from "./Components/Footer/Footer";
-import MainPage from "./Components/MainPage/MainPage";
+import MainPage from "./Components/MainPage/Profile";
+import BottomTest from "./Components/MainPage/BottomTest";
 
 function App() {
 	return (
@@ -13,8 +13,12 @@ function App() {
 			<Header />
 			<main className='App'>
 				<MainPage />
+				<MainPage />
+				<MainPage />
+				<MainPage />
+				<MainPage />
+				<BottomTest />
 			</main>
-			<Footer />
 		</>
 	);
 }
