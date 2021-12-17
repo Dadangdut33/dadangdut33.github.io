@@ -49,7 +49,6 @@ export default function DarkModeToggle() {
 	};
 
 	React.useEffect(() => {
-		console.log("DarkModeToggle useEffect");
 		var currentMode = localStorage.getItem("bgmode");
 		if (currentMode == null) {
 			currentMode = getSystemDefaultTheme();
