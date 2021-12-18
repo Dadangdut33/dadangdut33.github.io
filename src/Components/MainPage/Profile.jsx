@@ -57,7 +57,15 @@ export default function MainPage() {
 						</div>
 					</div>
 					<div className='center'>
-						<motion.a className={btnClass} href='#about-me' style={{ margin: "0 auto" }} id='read-more-btn' onMouseEnter={() => setBtnClass("btn btn-primary")} onClick={() => setBtnClass("btn btn-primary")} whileHover={{ scale: 1.1 }}>
+						<motion.a
+							className={btnClass}
+							href='#about-me'
+							style={{ margin: "0 auto" }}
+							id='read-more-btn'
+							onMouseEnter={() => setBtnClass("btn btn-primary")}
+							onMouseLeave={() => setBtnClass("btn btn-primary pulse-animation")}
+							whileHover={{ scale: 1.1 }}
+						>
 							Read more <i className='bi bi-arrow-down-short'></i>
 						</motion.a>
 					</div>
