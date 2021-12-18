@@ -86,8 +86,9 @@ footer {
     padding: 0.25rem;
 }
 
-.margin-left-small {
+.ko-fi-logo {
     margin-left: 0.25rem;
+    margin-bottom: 3px;
 }
 
 .center {
