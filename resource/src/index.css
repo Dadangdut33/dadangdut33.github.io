@@ -38,6 +38,10 @@ footer {
     display: none;
 }
 
+.navbar {
+    transition: ease-in 0.5s;
+}
+
 /* fade transition */
 .fade-enter {
     opacity: 0;

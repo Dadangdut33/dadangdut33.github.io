@@ -6,6 +6,7 @@ import "./index.css";
 import Header from "./Components/Header/Header.jsx";
 import MainPage from "./Components/MainPage/Profile";
 import BottomTest from "./Components/MainPage/BottomTest";
+import MiddlteTest from "./Components/MainPage/MiddleTest";
 
 function App() {
 	return (
@@ -13,10 +14,9 @@ function App() {
 			<Header />
 			<main className='App'>
 				<MainPage />
-				<MainPage />
-				<MainPage />
-				<MainPage />
-				<MainPage />
+				<MiddlteTest />
+				<MiddlteTest />
+				<MiddlteTest />
 				<BottomTest />
 			</main>
 		</>

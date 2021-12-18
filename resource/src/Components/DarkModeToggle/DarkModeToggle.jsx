@@ -93,8 +93,8 @@ export default function DarkModeToggle() {
 				<img
 					src={logo}
 					className='bi bi-brightness-high'
-					width={"22"}
-					height={"22"}
+					width={"25"}
+					height={"25"}
 					fill='white'
 					alt='light/dark toggler'
 					viewBox='0 0 16 16'
