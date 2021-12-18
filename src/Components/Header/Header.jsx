@@ -34,22 +34,22 @@ export default function Header() {
 			if (window.scrollY > 400) {
 				setShow(true);
 
-				if (window.scrollY === heightAbout) {
+				if (window.scrollY > heightAbout - 150 && window.scrollY < heightAbout + 150) {
 					clearActiveHeader();
 					aboutNav.classList.add("active");
 				}
 
-				if (window.scrollY === heightAbout * 2) {
+				if (window.scrollY > heightAbout * 2 - 150 && window.scrollY < heightAbout * 2 + 150) {
 					clearActiveHeader();
 					skillsNav.classList.add("active");
 				}
 
-				if (window.scrollY === heightAbout * 3) {
+				if (window.scrollY > heightAbout * 3 - 150 && window.scrollY < heightAbout * 3 + 150) {
 					clearActiveHeader();
 					projectsNav.classList.add("active");
 				}
 
-				if (window.scrollY === heightAbout * 4) {
+				if (window.scrollY > heightAbout * 4 - 150 && window.scrollY < heightAbout * 4 + 150) {
 					clearActiveHeader();
 					contactNav.classList.add("active");
 				}
