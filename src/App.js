@@ -6,8 +6,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./index.css";
 import Header from "./Components/Header/Header.jsx";
 import MainPage from "./Components/MainPage/Profile";
-import BottomTest from "./Components/MainPage/BottomTest";
-import MiddlteTest from "./Components/MainPage/MiddleTest";
+import AboutMe from "./Components/MainPage/About";
+import Skills from "./Components/MainPage/Skills";
+import Projects from "./Components/MainPage/Projects";
+import Contact from "./Components/MainPage/Contact";
 
 function App() {
 	return (
@@ -15,10 +17,10 @@ function App() {
 			<Header />
 			<main className='App'>
 				<MainPage />
-				<MiddlteTest />
-				<MiddlteTest />
-				<MiddlteTest />
-				<BottomTest />
+				<AboutMe />
+				<Skills />
+				<Projects />
+				<Contact />
 			</main>
 		</>
 	);

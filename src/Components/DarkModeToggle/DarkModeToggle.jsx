@@ -4,9 +4,7 @@ import darkLogo from "./dark.svg";
 import lightLogo from "./light.svg";
 
 export default function DarkModeToggle() {
-	const [checked, setChecked] = React.useState(
-		localStorage.getItem("bgmode") === "dark" ? true : false
-	);
+	const [checked, setChecked] = React.useState(localStorage.getItem("bgmode") === "dark" ? true : false);
 
 	const [logo, setLogo] = React.useState(checked ? darkLogo : lightLogo);
 
@@ -85,30 +83,10 @@ export default function DarkModeToggle() {
 
 	return (
 		<div className='form-check form-switch ms-auto mt-3 me-3'>
-			<label
-				className='form-check-label ms-3'
-				htmlFor='lightSwitch'
-				style={{ marginLeft: "3px" }}
-			>
-				<img
-					src={logo}
-					className='bi bi-brightness-high'
-					width={"25"}
-					height={"25"}
-					fill='white'
-					alt='light/dark toggler'
-					viewBox='0 0 16 16'
-					style={{ marginBottom: "7px" }}
-				/>
+			<label className='form-check-label ms-3' htmlFor='lightSwitch' style={{ marginLeft: "3px" }}>
+				<img src={logo} className='bi bi-brightness-high' width={"25"} height={"25"} fill='white' alt='light/dark toggler' viewBox='0 0 16 16' style={{ marginBottom: "7px" }} />
 			</label>
-			<input
-				className='form-check-input'
-				type={"checkbox"}
-				id='lightSwitch'
-				onChange={toggleBgMode}
-				checked={checked}
-				style={{ marginLeft: "0px" }}
-			/>
+			<input className='form-check-input' type={"checkbox"} id='lightSwitch' onChange={toggleBgMode} checked={checked} style={{ marginLeft: "0px" }} />
 		</div>
 	);
 }

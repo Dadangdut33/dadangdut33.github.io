@@ -1,8 +1,8 @@
 export default function MainPage() {
 	return (
-		<section className='center-flex-column'>
+		<section className='center-flex-column' id='projects'>
 			<div className='center-horizontal-vertical'>
-				<h1>aaaaaa</h1>
+				<h1>Some of my Repositories</h1>
 			</div>
 		</section>
 	);
