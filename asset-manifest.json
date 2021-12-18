@@ -5,11 +5,11 @@
     "main.js.map": "/resource/static/js/main.c9d1bc32.chunk.js.map",
     "runtime-main.js": "/resource/static/js/runtime-main.1176bbec.js",
     "runtime-main.js.map": "/resource/static/js/runtime-main.1176bbec.js.map",
-    "static/css/2.16864d6b.chunk.css": "/resource/static/css/2.16864d6b.chunk.css",
+    "static/css/2.b5d76ea5.chunk.css": "/resource/static/css/2.b5d76ea5.chunk.css",
     "static/js/2.e16de742.chunk.js": "/resource/static/js/2.e16de742.chunk.js",
     "static/js/2.e16de742.chunk.js.map": "/resource/static/js/2.e16de742.chunk.js.map",
     "index.html": "/resource/index.html",
-    "static/css/2.16864d6b.chunk.css.map": "/resource/static/css/2.16864d6b.chunk.css.map",
+    "static/css/2.b5d76ea5.chunk.css.map": "/resource/static/css/2.b5d76ea5.chunk.css.map",
     "static/css/main.f5b0ec4e.chunk.css.map": "/resource/static/css/main.f5b0ec4e.chunk.css.map",
     "static/js/2.e16de742.chunk.js.LICENSE.txt": "/resource/static/js/2.e16de742.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/resource/static/media/bootstrap-icons.38c4d249.woff",
@@ -19,7 +19,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1176bbec.js",
-    "static/css/2.16864d6b.chunk.css",
+    "static/css/2.b5d76ea5.chunk.css",
     "static/js/2.e16de742.chunk.js",
     "static/css/main.f5b0ec4e.chunk.css",
     "static/js/main.c9d1bc32.chunk.js"
