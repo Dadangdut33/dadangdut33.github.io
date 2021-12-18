@@ -1,12 +1,14 @@
-import { useEffect } from "react";
 import logo from "./logo.png";
 import Pulse from "react-reveal/Jump";
 import Fade from "react-reveal/Fade";
-import Jump from "react-reveal/Jump";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function MainPage() {
-	// set document title
+	const [btnClass, setBtnClass] = useState("btn btn-primary pulse-animation");
+
 	useEffect(() => {
+		// set document title
 		document.title = "Dadangdut33's Profile";
 	}, []);
 
@@ -49,7 +51,7 @@ export default function MainPage() {
 								</h1>
 							</div>
 							<h2 className='lead'>Full Stack Developer</h2>
-							<h4 class='text-muted'>
+							<h4 className='text-muted'>
 								I'm currently pursuing my bachelor degree as an
 								Informatics Engineering Student at{" "}
 								<a
@@ -58,22 +60,23 @@ export default function MainPage() {
 								>
 									UIN Jakarta
 								</a>
-								<br />I like to learn new things and code for
-								some side projects on my free time.
+								<br />I like to learn new things and do some
+								coding for side projects on my free time.
 							</h4>
 						</div>
 					</div>
-					<Jump delay={3000}>
-						<div className='center'>
-							<a
-								className='btn btn-primary'
-								href='#about-me'
-								style={{ margin: "0 auto" }}
-							>
-								Read more <i class='bi bi-arrow-down-short'></i>
-							</a>
-						</div>
-					</Jump>
+					<motion.div className='center' whileHover={{ scale: 1.1 }}>
+						<a
+							className={btnClass}
+							href='#about-me'
+							style={{ margin: "0 auto" }}
+							id='read-more-btn'
+							onMouseEnter={() => setBtnClass("btn btn-primary")}
+							onClick={() => setBtnClass("btn btn-primary")}
+						>
+							Read more <i className='bi bi-arrow-down-short'></i>
+						</a>
+					</motion.div>
 				</div>
 			</Fade>
 		</section>
