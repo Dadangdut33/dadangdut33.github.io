@@ -26,17 +26,36 @@ export default function MainPage() {
 								alt='Logo'
 								className='logo-main content center-horizontal'
 							/>{" "}
-							<div
+							<motion.div
 								className='center-horizontal'
 								style={{ paddingTop: "4px" }}
+								whileHover={{ scale: 1.1 }}
 							>
-								<a href='https://github.com/Dadangdut33'>
+								<a
+									href='https://github.com/Dadangdut33'
+									target={"_blank"}
+									rel='noreferrer'
+								>
 									<i className='bi bi-github pad-small'></i>
 								</a>
-								<a href='https://www.linkedin.com/in/fauzan-farhan-antoro/'>
+								<a
+									href='https://www.linkedin.com/in/fauzan-farhan-antoro/'
+									target={"_blank"}
+									rel='noreferrer'
+								>
 									<i className='bi bi-linkedin pad-small'></i>
 								</a>
-							</div>
+								<a
+									href='https://ko-fi.com/dadangdut33'
+									target={"_blank"}
+									rel='noreferrer'
+								>
+									<i
+										className='iconify margin-left-small'
+										data-icon='simple-icons:kofi'
+									></i>
+								</a>
+							</motion.div>
 						</div>
 						<div className='content'>
 							<div className='flex-dir-row persist'>
@@ -65,18 +84,19 @@ export default function MainPage() {
 							</h4>
 						</div>
 					</div>
-					<motion.div className='center' whileHover={{ scale: 1.1 }}>
-						<a
+					<div className='center'>
+						<motion.a
 							className={btnClass}
 							href='#about-me'
 							style={{ margin: "0 auto" }}
 							id='read-more-btn'
 							onMouseEnter={() => setBtnClass("btn btn-primary")}
 							onClick={() => setBtnClass("btn btn-primary")}
+							whileHover={{ scale: 1.1 }}
 						>
 							Read more <i className='bi bi-arrow-down-short'></i>
-						</a>
-					</motion.div>
+						</motion.a>
+					</div>
 				</div>
 			</Fade>
 		</section>
