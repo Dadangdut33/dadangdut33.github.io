@@ -1,4 +1,9 @@
-@import url('http://fonts.cdnfonts.com/css/vt323');
+@font-face {
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://fonts.cdnfonts.com/s/15755/VT323-Regular.woff') format('woff');
+}
 
 html,
 body,
