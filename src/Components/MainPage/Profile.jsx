@@ -1,16 +1,11 @@
 import logo from "./logo.png";
 import Pulse from "react-reveal/Jump";
 import Fade from "react-reveal/Fade";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function MainPage() {
 	const [btnClass, setBtnClass] = useState("btn btn-primary pulse-animation");
-
-	useEffect(() => {
-		// set document title
-		document.title = "Dadangdut33's Profile";
-	}, []);
 
 	return (
 		<section className='center-flex-column' id='top'>
