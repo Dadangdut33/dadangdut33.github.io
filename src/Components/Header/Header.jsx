@@ -6,8 +6,11 @@ export default function Header() {
 	const [showState, setShow] = useState(false);
 
 	useEffect(() => {
+		const btnBackToTop = document.getElementById("btn-back-to-top");
 		if (window.scrollY > 400) {
 			setShow(true);
+		} else {
+			btnBackToTop.style.display = "none";
 		}
 
 		// all components have the same height so only need 1
@@ -25,6 +28,20 @@ export default function Header() {
 			projectsNav.classList.remove("active");
 			contactNav.classList.remove("active");
 		};
+
+		btnBackToTop.addEventListener(
+			"animationend",
+			(ev) => {
+				if (ev.type === "animationend") {
+					if (ev.animationName === "slide-in-bottom-disappear") {
+						btnBackToTop.style.display = "none";
+					} else {
+						btnBackToTop.style.display = "block";
+					}
+				}
+			},
+			false
+		);
 
 		window.onresize = () => {
 			heightAbout = aboutComp.offsetHeight;
@@ -61,44 +78,51 @@ export default function Header() {
 	}, []);
 
 	return (
-		<Fade top when={showState}>
-			<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
-				<div className='container-fluid'>
-					<a className='navbar-brand' href='/#'>
-						<span style={{ fontSize: "26px" }}>Dadangdut33</span>
-					</a>
-					<button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
-						<span className='navbar-toggler-icon'></span>
-					</button>
-					<div className='collapse navbar-collapse' id='navbarNavDropdown'>
-						<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
-							<li className='nav-item'>
-								<a className='nav-link active' aria-current='page' href='#about-me' id='about-nav'>
-									About
-								</a>
-							</li>
-							<li className='nav-item'>
-								<a className='nav-link' href='#skills' id='skills-nav'>
-									Skills
-								</a>
-							</li>
-							<li className='nav-item'>
-								<a className='nav-link' href='#projects' id='projects-nav'>
-									Projects
-								</a>
-							</li>
-							<li className='nav-item'>
-								<a className='nav-link' href='#contact-me' id='contact-nav'>
-									Contact
-								</a>
-							</li>
-						</ul>
-						<div className='d-flex' style={{ marginBottom: "7px" }}>
-							<DarkModeToggle />
+		<>
+			<Fade top when={showState}>
+				<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
+					<div className='container-fluid'>
+						<a className='navbar-brand' href='/#'>
+							<span style={{ fontSize: "26px" }}>Dadangdut33</span>
+						</a>
+						<button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+							<span className='navbar-toggler-icon'></span>
+						</button>
+						<div className='collapse navbar-collapse' id='navbarNavDropdown'>
+							<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
+								<li className='nav-item'>
+									<a className='nav-link active' aria-current='page' href='#about-me' id='about-nav'>
+										About
+									</a>
+								</li>
+								<li className='nav-item'>
+									<a className='nav-link' href='#skills' id='skills-nav'>
+										Skills
+									</a>
+								</li>
+								<li className='nav-item'>
+									<a className='nav-link' href='#projects' id='projects-nav'>
+										Projects
+									</a>
+								</li>
+								<li className='nav-item'>
+									<a className='nav-link' href='#contact-me' id='contact-nav'>
+										Contact
+									</a>
+								</li>
+							</ul>
+							<div className='d-flex' style={{ marginBottom: "7px" }}>
+								<DarkModeToggle />
+							</div>
 						</div>
 					</div>
-				</div>
-			</nav>
-		</Fade>
+				</nav>
+			</Fade>
+			<div>
+				<a href='/#' className={showState ? "btn btn-outline-light btn-rounded slide-in-bottom-animation" : "btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top'>
+					<i class='bi bi-arrow-up'></i>
+				</a>
+			</div>
+		</>
 	);
 }
