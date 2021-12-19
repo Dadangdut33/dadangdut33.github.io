@@ -31,7 +31,7 @@ export default function Header() {
 		};
 
 		window.onscroll = () => {
-			if (window.scrollY > 400) {
+			if (window.scrollY > 300) {
 				setShow(true);
 
 				if (window.scrollY > heightAbout - 150 && window.scrollY < heightAbout + 150) {
@@ -54,6 +54,7 @@ export default function Header() {
 					contactNav.classList.add("active");
 				}
 			} else {
+				clearActiveHeader();
 				setShow(false);
 			}
 		};
