@@ -10,7 +10,7 @@ export default function MainPage() {
 						hard job
 					</strong>
 					<ReactTooltip id='imgPopup-1' className='tooltip-img'>
-						<img src='https://c.tenor.com/OB4K11sbmrMAAAAM/spongebob-thinking.gif' />
+						<img src='https://c.tenor.com/OB4K11sbmrMAAAAM/spongebob-thinking.gif' alt='thinking-hard-gif' />
 					</ReactTooltip>
 					, but then i realize that other stuff are also hard so why don't i try to pursue something that i could enjoy and so... here I am.
 				</h5>
