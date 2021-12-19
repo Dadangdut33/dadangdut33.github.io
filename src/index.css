@@ -77,6 +77,15 @@ footer {
     text-justify: inter-word;
 }
 
+.justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.wrap-mid {
+    max-width: 800px;
+}
+
 .flex-dir-column {
     display: flex;
     flex-direction: column;
@@ -107,10 +116,21 @@ footer {
     width: 220px;
 }
 
+.tooltip-img {
+    max-width: 90%;
+    height: auto;
+}
+
 #btn-back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+@media only screen and (max-device-width: 800px) {
+    .justify {
+        max-width: 90%;
+    }
 }
 
 @media only screen and (max-device-width: 650px) {
