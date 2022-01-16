@@ -81,7 +81,7 @@ export default function Header() {
 					projectsNav.classList.add("active");
 				}
 
-				if (window.scrollY > heightAbout * 3 - 150 && window.scrollY < heightAbout * 3 + 150) {
+				if (window.scrollY > heightAbout * 3 - 200 && window.scrollY < heightAbout * 3 + 200) {
 					clearActiveHeader();
 					contactNav.classList.add("active");
 				}
