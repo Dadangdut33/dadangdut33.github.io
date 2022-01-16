@@ -6,7 +6,6 @@ import "./css/animation.css";
 import Header from "./Components/Header/Header.jsx";
 import MainPage from "./Components/MainPage/Profile";
 import AboutMe from "./Components/MainPage/About";
-import Skills from "./Components/MainPage/Skills";
 import Projects from "./Components/MainPage/Projects";
 import Contact from "./Components/MainPage/Contact";
 import MainPageMeta from "./Components/Meta/MainPageMeta";
@@ -19,7 +18,6 @@ function App() {
 			<main className='App'>
 				<MainPage />
 				<AboutMe />
-				<Skills />
 				<Projects />
 				<Contact />
 			</main>

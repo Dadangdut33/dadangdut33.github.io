@@ -18,13 +18,11 @@ export default function Header() {
 		var heightAbout = aboutComp.offsetHeight;
 
 		var aboutNav = document.getElementById("about-nav");
-		var skillsNav = document.getElementById("skills-nav");
 		var projectsNav = document.getElementById("projects-nav");
 		var contactNav = document.getElementById("contact-nav");
 
 		const clearActiveHeader = () => {
 			aboutNav.classList.remove("active");
-			skillsNav.classList.remove("active");
 			projectsNav.classList.remove("active");
 			contactNav.classList.remove("active");
 		};
@@ -58,15 +56,10 @@ export default function Header() {
 
 				if (window.scrollY > heightAbout * 2 - 150 && window.scrollY < heightAbout * 2 + 150) {
 					clearActiveHeader();
-					skillsNav.classList.add("active");
-				}
-
-				if (window.scrollY > heightAbout * 3 - 150 && window.scrollY < heightAbout * 3 + 150) {
-					clearActiveHeader();
 					projectsNav.classList.add("active");
 				}
 
-				if (window.scrollY > heightAbout * 4 - 150 && window.scrollY < heightAbout * 4 + 150) {
+				if (window.scrollY > heightAbout * 3 - 150 && window.scrollY < heightAbout * 3 + 150) {
 					clearActiveHeader();
 					contactNav.classList.add("active");
 				}
@@ -85,7 +78,15 @@ export default function Header() {
 						<a className='navbar-brand' href='/#'>
 							<span style={{ fontSize: "26px" }}>Dadangdut33</span>
 						</a>
-						<button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+						<button
+							className='navbar-toggler'
+							type='button'
+							data-bs-toggle='collapse'
+							data-bs-target='#navbarNavDropdown'
+							aria-controls='navbarNavDropdown'
+							aria-expanded='false'
+							aria-label='Toggle navigation'
+						>
 							<span className='navbar-toggler-icon'></span>
 						</button>
 						<div className='collapse navbar-collapse' id='navbarNavDropdown'>
@@ -93,11 +94,6 @@ export default function Header() {
 								<li className='nav-item'>
 									<a className='nav-link active' aria-current='page' href='#about-me' id='about-nav'>
 										About
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link' href='#skills' id='skills-nav'>
-										Skills
 									</a>
 								</li>
 								<li className='nav-item'>

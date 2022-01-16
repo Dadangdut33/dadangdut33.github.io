@@ -10,8 +10,8 @@ body,
 #root {
     height: 100%;
     font-size: large;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    /* scroll-behavior: smooth; */
+    /* scroll-snap-type: y mandatory; */
 }
 
 #root {
@@ -23,7 +23,9 @@ body,
 section {
     height: 100%;
     width: 100%;
-    scroll-snap-align: start;
+    min-width: 100%;
+    min-height: 100%;
+    /* scroll-snap-align: start; */
 }
 
 footer {

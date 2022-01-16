@@ -5,8 +5,7 @@ export default function Footer() {
 			<div className='container p-4 pb-0'>
 				<section className=''>
 					<p className='d-flex justify-content-center align-items-center'>
-						<span className='me-3'>Consider to </span>
-						<KoFi color='29abe0' id='dadangdut33' label='Support Me on Ko-Fi' />
+						<KoFi color='29abe0' id='dadangdut33' label='Buy Me a Ko-Fi' />
 					</p>
 				</section>
 			</div>
