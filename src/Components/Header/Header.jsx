@@ -31,7 +31,7 @@ export default function Header() {
 
 		// all components have the same height so only need 1
 		var aboutComp = document.getElementById("about-me");
-		var heightAbout = aboutComp.offsetHeight;
+		var componentHeight = aboutComp.offsetHeight;
 
 		var aboutNav = document.getElementById("about-nav");
 		var projectsNav = document.getElementById("projects-nav");
@@ -58,7 +58,7 @@ export default function Header() {
 		);
 
 		window.onresize = () => {
-			heightAbout = aboutComp.offsetHeight;
+			componentHeight = aboutComp.offsetHeight;
 		};
 
 		window.onscroll = () => {
@@ -71,17 +71,17 @@ export default function Header() {
 					btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
 				}
 
-				if (window.scrollY > heightAbout - 150 && window.scrollY < heightAbout + 150) {
+				if (window.scrollY > componentHeight - 150 && window.scrollY < componentHeight + 150) {
 					clearActiveHeader();
 					aboutNav.classList.add("active");
 				}
 
-				if (window.scrollY > heightAbout * 2 - 150 && window.scrollY < heightAbout * 2 + 150) {
+				if (window.scrollY > componentHeight * 2 - 150 && window.scrollY < componentHeight * 2 + 150) {
 					clearActiveHeader();
 					projectsNav.classList.add("active");
 				}
 
-				if (window.scrollY > heightAbout * 3 - 200 && window.scrollY < heightAbout * 3 + 200) {
+				if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
 					clearActiveHeader();
 					contactNav.classList.add("active");
 				}
