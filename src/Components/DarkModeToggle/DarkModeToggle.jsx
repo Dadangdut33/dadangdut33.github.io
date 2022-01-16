@@ -75,7 +75,7 @@ export default function DarkModeToggle() {
 					clearInterval(checkExist);
 					setDarkMode();
 				}
-			}, 100); // check every 100ms
+			}, 100); // check every 100ms (check until element is found)
 		} else {
 			setLightMode();
 		}

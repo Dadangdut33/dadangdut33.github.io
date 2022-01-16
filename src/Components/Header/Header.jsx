@@ -7,11 +7,27 @@ export default function Header() {
 
 	useEffect(() => {
 		const btnBackToTop = document.getElementById("btn-back-to-top");
-		if (window.scrollY > 400) {
+		// check on startup
+		if (window.scrollY > 300) {
 			setShow(true);
+			// show/hide back to top btn and check the bg mode
+			if (document.body.classList.contains("bg-dark")) {
+				btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-animation";
+			} else {
+				btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
+			}
 		} else {
 			btnBackToTop.style.display = "none";
 		}
+
+		// check every 100ms for bg change
+		var intervalBgCheck = setInterval(() => {
+			if (document.body.classList.contains("bg-dark")) {
+				btnBackToTop.className = btnBackToTop.className.replace("btn-outline-dark", "btn-outline-light");
+			} else {
+				btnBackToTop.className = btnBackToTop.className.replace("btn-outline-light", "btn-outline-dark");
+			}
+		}, 100);
 
 		// all components have the same height so only need 1
 		var aboutComp = document.getElementById("about-me");
@@ -48,6 +64,12 @@ export default function Header() {
 		window.onscroll = () => {
 			if (window.scrollY > 300) {
 				setShow(true);
+				// show/hide back to top btn and check the bg mode
+				if (document.body.classList.contains("bg-dark")) {
+					btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-animation";
+				} else {
+					btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
+				}
 
 				if (window.scrollY > heightAbout - 150 && window.scrollY < heightAbout + 150) {
 					clearActiveHeader();
@@ -66,7 +88,16 @@ export default function Header() {
 			} else {
 				clearActiveHeader();
 				setShow(false);
+				if (document.body.classList.contains("bg-dark")) {
+					btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation";
+				} else {
+					btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-disappear-animation";
+				}
 			}
+		};
+
+		return () => { // cleanup
+			clearInterval(intervalBgCheck);
 		};
 	}, []);
 
@@ -115,7 +146,7 @@ export default function Header() {
 				</nav>
 			</Fade>
 			<div>
-				<a href='/#' className={showState ? "btn btn-outline-light btn-rounded slide-in-bottom-animation" : "btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top'>
+				<a href='/#' className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top'>
 					<i class='bi bi-arrow-up'></i>
 				</a>
 			</div>
