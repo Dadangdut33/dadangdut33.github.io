@@ -8,12 +8,12 @@ import MainPage from "./Components/MainPage/Profile";
 import AboutMe from "./Components/MainPage/About";
 import Projects from "./Components/MainPage/Projects";
 import Contact from "./Components/MainPage/Contact";
-import MainPageMeta from "./Components/Meta/MainPageMeta";
+import MouseHover from "./Components/MainPage/MouseHover";
 
 function App() {
 	return (
 		<>
-			<MainPageMeta />
+			<MouseHover />
 			<Header />
 			<main className='App'>
 				<MainPage />

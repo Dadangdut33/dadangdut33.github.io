@@ -1,4 +1,3 @@
-import logo from "./logo.png";
 import Pulse from "react-reveal/Jump";
 import Fade from "react-reveal/Fade";
 import { useState } from "react";
@@ -13,7 +12,7 @@ export default function MainPage() {
 				<div className='center-horizontal-vertical' style={{ paddingBottom: "70px" }}>
 					<div className='flex-dir-row'>
 						<div className='flex-dir-column'>
-							<img src={logo} alt='Logo' className='logo-main content center-horizontal' />{" "}
+							<img src='./logo512.png' alt='Logo' className='logo-main content center-horizontal' />{" "}
 							<motion.div className='center-horizontal' style={{ paddingTop: "4px" }} whileHover={{ scale: 1.1 }}>
 								<a href='https://github.com/Dadangdut33' target={"_blank"} rel='noreferrer'>
 									<i className='bi bi-github pad-small'></i>
@@ -44,7 +43,7 @@ export default function MainPage() {
 							<h2 className='lead'>Full Stack Developer</h2>
 							<h4 className='text-muted'>
 								I'm currently pursuing my bachelor degree as an Informatics Engineering Student at{" "}
-								<a href='https://www.uinjkt.ac.id/' className='subtle-link'>
+								<a href='https://www.uinjkt.ac.id/' className='subtle-link' target='_blank' rel='noopener noreferrer'>
 									UIN Jakarta
 								</a>
 								<br />I like to learn new things and do some coding for side projects on my free time.
