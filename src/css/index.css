@@ -32,6 +32,10 @@ footer {
     flex-shrink: 0;
 }
 
+.no-decoration {
+    text-decoration: none !important;
+}
+
 .App {
     flex: 1 0 auto;
 }
