@@ -27,7 +27,7 @@ export default function MainPage() {
 	return (
 		<section className='center-flex-column' id='about-me'>
 			<div className='center-horizontal-vertical justify wrap-mid'>
-				<h1 className='display-1 text-decoration-underline text-center' style={{ paddingBottom: "6px" }}>
+				<h1 className='display-1 text-center underline-1' style={{ paddingBottom: "6px" }}>
 					A little more about me
 				</h1>
 				<motion.div className='content-outline' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants} style={{ overflow: "hidden" }}>
@@ -45,7 +45,7 @@ export default function MainPage() {
 						I like games, anime, movie, manga, etc. I am very interested in programming, especially in topics related to stuff that I like. I have a passion for learning new things and I am always trying to
 						improve my skills.
 					</p>
-					<p className='subtle-text'>I really hope what i create can be useful, even if just a little.</p>
+					<p className='subtle-text'>I really hope things that i create can be useful, even if just a little.</p>
 				</motion.div>
 			</div>
 		</section>

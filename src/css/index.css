@@ -83,6 +83,13 @@ footer {
     outline-offset: 1rem;
 }
 
+.underline-1 {
+    text-decoration: underline;
+    text-decoration-color: rgb(135, 196, 55);
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 0.1em;
+}
+
 .justify {
     text-align: justify;
     text-justify: inter-word;
