@@ -1,10 +1,30 @@
 import ReactTooltip from "react-tooltip";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 export default function MainPage() {
+	const [contentRef, contentInView] = useInView({
+		triggerOnce: false,
+	});
+
+	const contentVariants = {
+		hidden: {
+			opacity: 0,
+			y: 40,
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.7,
+			},
+		},
+	};
+
 	return (
 		<section className='center-flex-column' id='about-me'>
-			<div className='center-horizontal-vertical justify wrap-mid'>
-				<h1 className='display-1'>A little more about me</h1>
-				<h5 className='text-muted'>
+			<motion.div className='center-horizontal-vertical justify wrap-mid content-outline' ref={contentRef} animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
+				<h1 className='display-1 text-decoration-underline text-center'>A little more about me</h1>
+				<p className='subtle-text'>
 					At first, I have never thought of becoming a programmer because I had a feeling that it's a{" "}
 					<strong data-tip data-for='imgPopup-1'>
 						hard job
@@ -12,11 +32,14 @@ export default function MainPage() {
 					<ReactTooltip id='imgPopup-1' className='tooltip-img'>
 						<img src='https://c.tenor.com/OB4K11sbmrMAAAAM/spongebob-thinking.gif' alt='thinking-hard-gif' />
 					</ReactTooltip>
-					, but then i realize that other stuff are also hard so why don't i try to pursue something that i could enjoy and so... here I am.
-				</h5>
-				<h5 className='text-muted'>I like games, anime, movie, manga, etc. I am very interested in programming, especially in topics related to stuff that I like.</h5>
-				<h5 className='text-muted'>I have a passion for learning new things and I am always trying to improve my skills.</h5>
-			</div>
+					, but then i realize that other stuff are also hard. So, why don't i try to pursue something that i could enjoy and ... here I am.
+				</p>
+				<p className='subtle-text'>
+					I like games, anime, movie, manga, etc. I am very interested in programming, especially in topics related to stuff that I like. I have a passion for learning new things and I am always trying to
+					improve my skills.
+				</p>
+				<p className='subtle-text'>I really hope what i create can be useful, even if just a little.</p>
+			</motion.div>
 		</section>
 	);
 }

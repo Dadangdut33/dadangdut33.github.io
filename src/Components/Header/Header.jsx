@@ -8,7 +8,7 @@ export default function Header() {
 	useEffect(() => {
 		const btnBackToTop = document.getElementById("btn-back-to-top");
 		// check on startup
-		if (window.scrollY > 300) {
+		if (window.scrollY > 400) {
 			setShow(true);
 			// show/hide back to top btn and check the bg mode
 			if (document.body.classList.contains("bg-dark")) {
@@ -60,7 +60,7 @@ export default function Header() {
 		};
 
 		window.onscroll = () => {
-			if (window.scrollY > 300) {
+			if (window.scrollY > 400) {
 				setShow(true);
 				// show/hide back to top btn and check the bg mode
 				if (document.body.classList.contains("bg-dark")) {
@@ -108,7 +108,7 @@ export default function Header() {
 			<Fade top when={showState}>
 				<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
 					<div className='container-fluid'>
-						<a className='navbar-brand' href={showState ? "/#" : "#/"} style={{ cursor: showState ? "pointer" : "default" }}>
+						<a className='navbar-brand' href='/#' style={{ cursor: showState ? "pointer" : "default" }}>
 							<span style={{ fontSize: "26px" }}>Dadangdut33</span>
 						</a>
 						<button
@@ -125,17 +125,17 @@ export default function Header() {
 						<div className='collapse navbar-collapse' id='navbarNavDropdown'>
 							<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
 								<li className='nav-item'>
-									<a className='nav-link' aria-current='page' href={showState ? "#about-me" : "#/"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
+									<a className='nav-link' aria-current='page' href={"#about-me"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
 										About
 									</a>
 								</li>
 								<li className='nav-item'>
-									<a className='nav-link' href={showState ? "#projects" : "#/"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
+									<a className='nav-link' href={"#projects"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
 										Projects
 									</a>
 								</li>
 								<li className='nav-item'>
-									<a className='nav-link' href={showState ? "#contact-me" : "#/"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
+									<a className='nav-link' href={"#contact-me"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
 										Contact
 									</a>
 								</li>
@@ -149,7 +149,7 @@ export default function Header() {
 			</Fade>
 			<div>
 				<a href='/#' className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top'>
-					<i class='bi bi-arrow-up'></i>
+					<i className='bi bi-arrow-up'></i>
 				</a>
 			</div>
 		</>

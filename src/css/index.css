@@ -52,13 +52,12 @@ footer {
     color: #145DA0;
 }
 
-.navbar {
-    transition: ease-in 0.5s;
+.subtle-text {
+    color: #878787;
 }
 
-/* fade transition */
-.fade-enter {
-    opacity: 0;
+.navbar {
+    transition: ease-in 0.5s;
 }
 
 .center-flex-column {
@@ -77,6 +76,11 @@ footer {
     padding: 0 1rem;
     text-align: justify;
     text-justify: inter-word;
+}
+
+.content-outline {
+    outline: 1px solid #ccc;
+    outline-offset: 1rem;
 }
 
 .justify {
@@ -111,7 +115,9 @@ footer {
 }
 
 .center-horizontal {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .logo-main {
@@ -216,7 +222,7 @@ span.cursor.typing {
         height: 5px;
     }
 
-    /* Light */
+    /* Dark */
     /* Handle */
     .dark-scroll::-webkit-scrollbar-thumb {
         background: #3f474f;
