@@ -9,13 +9,18 @@ import AboutMe from "./Components/MainPage/About";
 import Projects from "./Components/MainPage/Projects";
 import Contact from "./Components/MainPage/Contact";
 import MouseHover from "./Components/MainPage/MouseHover";
+import useScrollSnap from "react-use-scroll-snap";
+import { useRef } from "react";
 
 function App() {
+	const scrollRef = useRef(null);
+	useScrollSnap({ ref: scrollRef, duration: 100, delay: 1 });
+
 	return (
 		<>
 			<MouseHover />
 			<Header />
-			<main className='App'>
+			<main className='App' ref={scrollRef}>
 				<MainPage />
 				<AboutMe />
 				<Projects />

@@ -3,26 +3,30 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export default function MainPage() {
 	const [contentRef, contentInView] = useInView({
-		triggerOnce: false,
+		triggerOnce: true,
 	});
 
 	const contentVariants = {
 		hidden: {
 			opacity: 0,
-			y: 40,
+			height: 0,
+			transition: {
+				duration: 0.7,
+			},
 		},
 		visible: {
 			opacity: 1,
-			y: 0,
+			height: "fit-content",
 			transition: {
-				duration: 0.7,
+				duration: 0.9,
+				delay: 0.3,
 			},
 		},
 	};
 
 	return (
 		<section className='center-flex-column' id='about-me'>
-			<motion.div className='center-horizontal-vertical justify wrap-mid content-outline' ref={contentRef} animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
+			<motion.div className='center-horizontal-vertical justify wrap-mid content-outline' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
 				<h1 className='display-1 text-decoration-underline text-center'>A little more about me</h1>
 				<p className='subtle-text'>
 					At first, I have never thought of becoming a programmer because I had a feeling that it's a{" "}
