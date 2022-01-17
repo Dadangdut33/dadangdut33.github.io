@@ -7,7 +7,6 @@ export default function Header() {
 
 	useEffect(() => {
 		const btnBackToTop = document.getElementById("btn-back-to-top");
-		const navBarTop = document.getElementById("navbar_top");
 		// check on startup
 		if (window.scrollY > 300) {
 			setShow(true);
@@ -109,7 +108,7 @@ export default function Header() {
 			<Fade top when={showState}>
 				<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
 					<div className='container-fluid'>
-						<a className='navbar-brand' href={showState ? "/#" : "javascript: void(0)"} style={{ cursor: showState ? "pointer" : "default" }}>
+						<a className='navbar-brand' href={showState ? "/#" : "#/"} style={{ cursor: showState ? "pointer" : "default" }}>
 							<span style={{ fontSize: "26px" }}>Dadangdut33</span>
 						</a>
 						<button
@@ -126,17 +125,17 @@ export default function Header() {
 						<div className='collapse navbar-collapse' id='navbarNavDropdown'>
 							<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
 								<li className='nav-item'>
-									<a className='nav-link active' aria-current='page' href={showState ? "#about-me" : "javascript: void(0)"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
+									<a className='nav-link' aria-current='page' href={showState ? "#about-me" : "#/"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
 										About
 									</a>
 								</li>
 								<li className='nav-item'>
-									<a className='nav-link' href={showState ? "#projects" : "javascript: void(0)"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
+									<a className='nav-link' href={showState ? "#projects" : "#/"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
 										Projects
 									</a>
 								</li>
 								<li className='nav-item'>
-									<a className='nav-link' href={showState ? "#contact-me" : "javascript: void(0)"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
+									<a className='nav-link' href={showState ? "#contact-me" : "#/"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
 										Contact
 									</a>
 								</li>
