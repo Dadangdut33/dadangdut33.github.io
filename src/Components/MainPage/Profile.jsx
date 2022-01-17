@@ -2,6 +2,7 @@ import Pulse from "react-reveal/Jump";
 import Fade from "react-reveal/Fade";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import TypeWriter from "./TypeWriter";
 
 export default function MainPage() {
 	const [btnClass, setBtnClass] = useState("btn btn-primary pulse-animation");
@@ -19,6 +20,9 @@ export default function MainPage() {
 								</a>
 								<a href='https://www.linkedin.com/in/fauzan-farhan-antoro/' target={"_blank"} rel='noreferrer'>
 									<i className='bi bi-linkedin pad-small'></i>
+								</a>
+								<a href='https://steamcommunity.com/id/dadangdut33/' target={"_blank"} rel='noreferrer'>
+									<i className='bi bi-steam pad-small'></i>
 								</a>
 								<a href='https://ko-fi.com/dadangdut33' target={"_blank"} rel='noreferrer'>
 									<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width={22} height={22} preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24' className='ko-fi-logo'>
@@ -40,7 +44,9 @@ export default function MainPage() {
 									<Pulse delay={750}>👋</Pulse>
 								</h1>
 							</div>
-							<h2 className='lead'>Full Stack Developer</h2>
+							<h2 className='lead'>
+								A <TypeWriter typingDelay={150} erasingDelay={100} newTextDelay={5000} textArray={["Full Stack Developer", "Student", "Learner"]} loop={true} />
+							</h2>
 							<h4 className='text-muted'>
 								I'm currently pursuing my bachelor degree as an Informatics Engineering Student at{" "}
 								<a href='https://www.uinjkt.ac.id/' className='subtle-link' target='_blank' rel='noopener noreferrer'>

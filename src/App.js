@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "./index.css";
+import "./css/index.css";
 import "./css/animation.css";
 import Header from "./Components/Header/Header.jsx";
 import MainPage from "./Components/MainPage/Profile";
