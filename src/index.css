@@ -150,6 +150,12 @@ footer {
     }
 }
 
+@media only screen and (max-device-width: 768px) {
+    .cursor {
+        display: none;
+    }
+}
+
 @media only screen and (max-device-width: 650px) {
     .flex-dir-row {
         flex-direction: column !important;
