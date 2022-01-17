@@ -43,19 +43,17 @@ export default function Header() {
 			contactNav.classList.remove("active");
 		};
 
-		btnBackToTop.addEventListener(
-			"animationend",
-			(ev) => {
-				if (ev.type === "animationend") {
-					if (ev.animationName === "slide-in-bottom-disappear") {
-						btnBackToTop.style.display = "none";
-					} else {
-						btnBackToTop.style.display = "block";
-					}
+		const displayBtnBackToTop = (ev) => {
+			if (ev.type === "animationend") {
+				if (ev.animationName === "slide-in-bottom-disappear") {
+					btnBackToTop.style.display = "none";
+				} else {
+					btnBackToTop.style.display = "block";
 				}
-			},
-			false
-		);
+			}
+		};
+
+		btnBackToTop.addEventListener("animationend", displayBtnBackToTop, false);
 
 		window.onresize = () => {
 			componentHeight = aboutComp.offsetHeight;
@@ -96,8 +94,12 @@ export default function Header() {
 			}
 		};
 
-		return () => { // cleanup
+		return () => {
+			// cleanup
 			clearInterval(intervalBgCheck);
+			btnBackToTop.removeEventListener("animationend", displayBtnBackToTop, false);
+			window.onresize = null;
+			window.onscroll = null;
 		};
 	}, []);
 
