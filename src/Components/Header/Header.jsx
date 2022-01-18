@@ -63,13 +63,18 @@ export default function Header() {
 
 		// startup check
 		if (window.scrollY > 400) {
-			darkModeToggler.classList.remove("moveRight-animation");
-			darkModeToggler.classList.add("moveLeft-animation");
+			// check width, only if < 575px
+			if (window.innerWidth < 575) {
+				darkModeToggler.classList.remove("moveRight-animation");
+				darkModeToggler.classList.add("moveLeft-animation");
+			}
 		}
 		window.onscroll = () => {
 			if (window.scrollY > 400) {
-				darkModeToggler.classList.remove("moveRight-animation");
-				darkModeToggler.classList.add("moveLeft-animation");
+				if (window.innerWidth < 575) {
+					darkModeToggler.classList.remove("moveRight-animation");
+					darkModeToggler.classList.add("moveLeft-animation");
+				}
 				setShow(true);
 				// show/hide back to top btn and check the bg mode
 				if (document.body.classList.contains("bg-dark")) {
