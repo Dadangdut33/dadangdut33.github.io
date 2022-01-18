@@ -53,7 +53,7 @@ span.anchor {
 
 .darkmode-toggler {
     position: fixed;
-    top: 2px;
+    top: 3px;
     z-index: 99999;
     right: 10px;
 }
@@ -154,6 +154,15 @@ span.anchor {
     right: 0;
 }
 
+.contact-me {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+    min-width: auto;
+    left: 40px;
+    right: 0;
+}
+
 .logo-main {
     width: 220px;
 }
@@ -250,6 +259,24 @@ span.cursor.typing {
     }
 }
 
+
+@media only screen and (max-device-width: 575px) {
+    .darkmode-toggler {
+        right: 80px;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    .about-me {
+        max-width: 80%;
+    }
+
+    .contact-me {
+        left: 45px;
+    }
+}
 
 /* custom scrollbar - only on desktop view */
 @media only screen and (min-device-width: 575px) {

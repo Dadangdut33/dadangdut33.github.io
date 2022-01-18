@@ -51,9 +51,9 @@ export default function BottomTest() {
 			<div className='center-horizontal-vertical'>
 				<span className='anchor' id='contact-me'></span>
 				<h1 className='display-1 text-center'>Contact Me</h1>
-				<motion.div ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants} style={{ overflow: "hidden", position: "absolute" }}>
-					<div className='center-horizontal-vertical justify wrap-mid'>
-						<p style={{ minWidth: "210px" }}>
+				<motion.div className='contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants} style={{ overflow: "hidden", position: "absolute" }}>
+					<div className='center-horizontal-vertical'>
+						<p>
 							<i class='bi bi-envelope'></i>{" "}
 							<a
 								href='mailto:dadang.contact@gmail.com'
