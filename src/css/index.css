@@ -32,6 +32,13 @@ footer {
     flex-shrink: 0;
 }
 
+span.anchor {
+    display: block;
+    position: relative;
+    top: -260px;
+    visibility: hidden;
+}
+
 .no-decoration {
     text-decoration: none !important;
 }
@@ -131,6 +138,15 @@ footer {
     text-align: center;
 }
 
+.about-me {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 800px;
+    min-width: auto;
+    left: 0;
+    right: 0;
+}
+
 .logo-main {
     width: 220px;
 }
@@ -210,6 +226,10 @@ span.cursor.typing {
 @media only screen and (max-device-width: 768px) {
     .cursor {
         display: none;
+    }
+
+    .about-me {
+        max-width: 90%;
     }
 }
 

@@ -2,10 +2,11 @@ import React from "react";
 import { ReactTinyLink } from "react-tiny-link";
 export default function MainPage() {
 	return (
-		<section className='center-flex-column' id='projects'>
+		<section className='center-flex-column' id='projects-section'>
 			<div className='center-horizontal-vertical'>
+				<span className='anchor' id='projects'></span>
 				<h1 className='text-center'>Some of my Repositories</h1>
-				<div className='flex-dir-row'>
+				{/* <div className='flex-dir-row'>
 					<ReactTinyLink
 						cardSize='large'
 						showGraphic={true}
@@ -34,7 +35,7 @@ export default function MainPage() {
 							url='https://github.com/Dadangdut33/Osu-Extractor'
 						/>
 					</span>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

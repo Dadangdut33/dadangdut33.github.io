@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function BottomTest() {
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: false,
-		rootMargin: "-300px 0px",
+		rootMargin: "-270px 0px",
 	});
 
 	const contentVariants = {
@@ -43,10 +43,11 @@ export default function BottomTest() {
 	};
 
 	return (
-		<section className='flex-dir-column' id='contact-me'>
+		<section className='flex-dir-column' id='contact-me-section'>
 			<div className='center-horizontal-vertical'>
+				<span className='anchor' id='contact-me'></span>
 				<h1 className='display-1 text-center'>Contact Me</h1>
-				<motion.div ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants} style={{ overflow: "hidden" }}>
+				<motion.div ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants} style={{ overflow: "hidden", position: "absolute" }}>
 					<div className='center-horizontal-vertical justify wrap-mid'>
 						<p style={{ minWidth: "210px" }}>
 							<i class='bi bi-envelope'></i>{" "}

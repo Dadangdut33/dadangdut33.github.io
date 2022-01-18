@@ -30,7 +30,7 @@ export default function Header() {
 		}, 100);
 
 		// all components have the same height so only need 1
-		var aboutComp = document.getElementById("about-me");
+		var aboutComp = document.getElementById("about-me-section");
 		var componentHeight = aboutComp.offsetHeight;
 
 		var aboutNav = document.getElementById("about-nav");
