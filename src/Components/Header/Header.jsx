@@ -7,31 +7,72 @@ export default function Header() {
 	const [showState, setShow] = useState(false);
 	const clickSfx = new Audio(ClickSound);
 
+	const [before, setBefore] = useState("/#");
+	const [after, setAfter] = useState("");
+
 	useEffect(() => {
-		const btnBackToTop = document.getElementById("btn-back-to-top");
+		const btnGotoTop = document.getElementById("btn-goto-top");
+		const btnGotoBottom = document.getElementById("btn-goto-bottom");
+		const darkModeToggler = document.querySelector(".darkmode-toggler");
+
 		// check on startup
 		if (window.scrollY > 400) {
 			setShow(true);
+			// darkmode toggler
+			if (window.innerWidth < 575) {
+				darkModeToggler.classList.remove("moveRight-animation");
+				darkModeToggler.classList.add("moveLeft-animation");
+			}
+
 			// show/hide back to top btn and check the bg mode
 			if (document.body.classList.contains("bg-dark")) {
-				btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-animation";
+				btnGotoTop.className = "btn btn-outline-light btn-rounded slide-in-top-animation";
+				btnGotoBottom.className = "btn btn-outline-light btn-rounded slide-in-bottom-animation";
 			} else {
-				btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
+				btnGotoTop.className = "btn btn-outline-dark btn-rounded slide-in-top-animation";
+				btnGotoBottom.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
 			}
 		} else {
-			btnBackToTop.style.display = "none";
+			btnGotoTop.style.display = "none";
+			btnGotoBottom.style.display = "none";
 		}
 
 		// check every 100ms for bg change
 		var intervalBgCheck = setInterval(() => {
 			if (document.body.classList.contains("bg-dark")) {
-				btnBackToTop.className = btnBackToTop.className.replace("btn-outline-dark", "btn-outline-light");
+				btnGotoTop.className = btnGotoTop.className.replace("btn-outline-dark", "btn-outline-light");
+				btnGotoBottom.className = btnGotoBottom.className.replace("btn-outline-dark", "btn-outline-light");
 			} else {
-				btnBackToTop.className = btnBackToTop.className.replace("btn-outline-light", "btn-outline-dark");
+				btnGotoTop.className = btnGotoTop.className.replace("btn-outline-light", "btn-outline-dark");
+				btnGotoBottom.className = btnGotoBottom.className.replace("btn-outline-light", "btn-outline-dark");
 			}
 		}, 100);
 
-		// all components have the same height so only need 1
+		const displayBtnBackToTop = (ev) => {
+			if (ev.type === "animationend") {
+				if (ev.animationName === "slide-in-top-disappear") {
+					btnGotoTop.style.display = "none";
+				} else {
+					btnGotoTop.style.display = "block";
+				}
+			}
+		};
+
+		const displayBtnGotoBottom = (ev) => {
+			if (ev.type === "animationend") {
+				if (ev.animationName === "slide-in-bottom-disappear") {
+					btnGotoBottom.style.display = "none";
+				} else {
+					btnGotoBottom.style.display = "block";
+				}
+			}
+		};
+
+		btnGotoTop.addEventListener("animationend", displayBtnBackToTop, false);
+		btnGotoBottom.addEventListener("animationend", displayBtnGotoBottom, false);
+
+		// navbar
+		// all section components have the same height so only need 1
 		var aboutComp = document.getElementById("about-me-section");
 		var componentHeight = aboutComp.offsetHeight;
 
@@ -45,69 +86,58 @@ export default function Header() {
 			contactNav.classList.remove("active");
 		};
 
-		const displayBtnBackToTop = (ev) => {
-			if (ev.type === "animationend") {
-				if (ev.animationName === "slide-in-bottom-disappear") {
-					btnBackToTop.style.display = "none";
-				} else {
-					btnBackToTop.style.display = "block";
-				}
-			}
-		};
-
-		btnBackToTop.addEventListener("animationend", displayBtnBackToTop, false);
-
+		// listeners
 		window.onresize = () => {
 			componentHeight = aboutComp.offsetHeight;
 		};
 
-		var darkModeToggler = document.querySelector(".darkmode-toggler");
-
-		// startup check
-		if (window.scrollY > 400) {
-			// check width, only if < 575px
-			if (window.innerWidth < 575) {
-				darkModeToggler.classList.remove("moveRight-animation");
-				darkModeToggler.classList.add("moveLeft-animation");
-			}
-		}
 		window.onscroll = () => {
 			if (window.scrollY > 400) {
 				if (window.innerWidth < 575) {
+					// move to left on mobile view (darkmode toggler)
 					darkModeToggler.classList.remove("moveRight-animation");
 					darkModeToggler.classList.add("moveLeft-animation");
 				}
-				setShow(true);
-				// show/hide back to top btn and check the bg mode
-				if (document.body.classList.contains("bg-dark")) {
-					btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-animation";
-				} else {
-					btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
-				}
+				setShow(true); // show navbar
 
-				if (window.scrollY > componentHeight - 150 && window.scrollY < componentHeight + 150) {
+				if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 200) {
 					clearActiveHeader();
 					aboutNav.classList.add("active");
+					setBefore("/#");
+					setAfter("/#projects");
+					btnGotoTop.classList.remove("slide-in-top-disappear-animation");
+					btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
+					btnGotoTop.classList.add("slide-in-top-animation");
+					btnGotoBottom.classList.add("slide-in-bottom-animation");
 				}
 
-				if (window.scrollY > componentHeight * 2 - 150 && window.scrollY < componentHeight * 2 + 150) {
+				if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 200) {
 					clearActiveHeader();
 					projectsNav.classList.add("active");
+					setBefore("/#about-me");
+					setAfter("/#contact-me");
+					btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
+					btnGotoBottom.classList.add("slide-in-bottom-animation");
 				}
 
 				if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
 					clearActiveHeader();
 					contactNav.classList.add("active");
+					setBefore("/#projects");
+					btnGotoBottom.classList.remove("slide-in-bottom-animation");
+					btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
 				}
 			} else {
-				clearActiveHeader();
-				setShow(false);
-				if (document.body.classList.contains("bg-dark")) {
-					btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation";
-				} else {
-					btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-disappear-animation";
-				}
-				// add moveright only if there is any
+				clearActiveHeader(); // clear active header
+				setShow(false); // hide navbar
+
+				// TOP OF PAGE, remove the arrow btn
+				btnGotoTop.classList.remove("slide-in-top-animation");
+				btnGotoBottom.classList.remove("slide-in-bottom-animation");
+				btnGotoTop.classList.add("slide-in-top-disappear-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
+
+				// add moveright only if there is any (darkmode toggler)
 				if (darkModeToggler.classList.contains("moveLeft-animation")) {
 					darkModeToggler.classList.remove("moveLeft-animation");
 					darkModeToggler.classList.add("moveRight-animation");
@@ -118,7 +148,8 @@ export default function Header() {
 		return () => {
 			// cleanup
 			clearInterval(intervalBgCheck);
-			btnBackToTop.removeEventListener("animationend", displayBtnBackToTop, false);
+			btnGotoTop.removeEventListener("animationend", displayBtnBackToTop, false);
+			btnGotoBottom.removeEventListener("animationend", displayBtnGotoBottom, false);
 			window.onresize = null;
 			window.onscroll = null;
 		};
@@ -167,8 +198,11 @@ export default function Header() {
 				</nav>
 			</Fade>
 			<div>
-				<a href='/#' className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top' onClick={() => clickSfx.play()}>
+				<a href={before} className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-goto-top' onClick={() => clickSfx.play()}>
 					<i className='bi bi-arrow-up'></i>
+				</a>
+				<a href={after} className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-goto-bottom' onClick={() => clickSfx.play()}>
+					<i className='bi bi-arrow-down'></i>
 				</a>
 			</div>
 		</>

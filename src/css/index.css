@@ -172,7 +172,13 @@ span.anchor {
     height: auto;
 }
 
-#btn-back-to-top {
+#btn-goto-top {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+}
+
+#btn-goto-bottom {
     position: fixed;
     bottom: 20px;
     right: 20px;
