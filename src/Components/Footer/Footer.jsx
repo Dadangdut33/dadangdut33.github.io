@@ -3,7 +3,7 @@ export default function Footer() {
 	return (
 		<footer className='text-center text-lg-start'>
 			<div className='container p-4 pb-0'>
-				<section className='d-flex justify-content-center align-items-center' style={{ marginBottom: "18px" }}>
+				<section className='d-flex justify-content-center align-items-center' style={{ marginBottom: "18px", marginTop: "30px" }}>
 					<KoFi color='29abe0' id='dadangdut33' label='Buy Me a Ko-Fi' />
 				</section>
 			</div>

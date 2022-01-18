@@ -15,8 +15,7 @@ export default function Header() {
 		const btnGotoBottom = document.getElementById("btn-goto-bottom");
 		const darkModeToggler = document.querySelector(".darkmode-toggler");
 
-		// check on startup
-		if (window.scrollY > 400) {
+		const checkScroll = () => {
 			setShow(true);
 			// darkmode toggler
 			if (window.innerWidth < 575) {
@@ -24,6 +23,36 @@ export default function Header() {
 				darkModeToggler.classList.add("moveLeft-animation");
 			}
 
+			if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 200) {
+				clearActiveHeader();
+				aboutNav.classList.add("active");
+				setBefore("/#");
+				setAfter("/#projects");
+				btnGotoTop.classList.remove("slide-in-top-disappear-animation");
+				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
+				btnGotoTop.classList.add("slide-in-top-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-animation");
+			}
+
+			if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 400) {
+				clearActiveHeader();
+				projectsNav.classList.add("active");
+				setBefore("/#about-me");
+				setAfter("/#contact-me");
+				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-animation");
+			}
+
+			if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
+				clearActiveHeader();
+				contactNav.classList.add("active");
+				setBefore("/#projects");
+				btnGotoBottom.classList.remove("slide-in-bottom-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
+			}
+		};
+
+		const checkBgColor = () => {
 			// show/hide back to top btn and check the bg mode
 			if (document.body.classList.contains("bg-dark")) {
 				btnGotoTop.className = "btn btn-outline-light btn-rounded slide-in-top-animation";
@@ -32,6 +61,12 @@ export default function Header() {
 				btnGotoTop.className = "btn btn-outline-dark btn-rounded slide-in-top-animation";
 				btnGotoBottom.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
 			}
+		};
+
+		// check on startup
+		if (window.scrollY > 400) {
+			checkScroll();
+			checkBgColor();
 		} else {
 			btnGotoTop.style.display = "none";
 			btnGotoBottom.style.display = "none";
@@ -93,40 +128,7 @@ export default function Header() {
 
 		window.onscroll = () => {
 			if (window.scrollY > 400) {
-				if (window.innerWidth < 575) {
-					// move to left on mobile view (darkmode toggler)
-					darkModeToggler.classList.remove("moveRight-animation");
-					darkModeToggler.classList.add("moveLeft-animation");
-				}
-				setShow(true); // show navbar
-
-				if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 200) {
-					clearActiveHeader();
-					aboutNav.classList.add("active");
-					setBefore("/#");
-					setAfter("/#projects");
-					btnGotoTop.classList.remove("slide-in-top-disappear-animation");
-					btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
-					btnGotoTop.classList.add("slide-in-top-animation");
-					btnGotoBottom.classList.add("slide-in-bottom-animation");
-				}
-
-				if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 200) {
-					clearActiveHeader();
-					projectsNav.classList.add("active");
-					setBefore("/#about-me");
-					setAfter("/#contact-me");
-					btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
-					btnGotoBottom.classList.add("slide-in-bottom-animation");
-				}
-
-				if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
-					clearActiveHeader();
-					contactNav.classList.add("active");
-					setBefore("/#projects");
-					btnGotoBottom.classList.remove("slide-in-bottom-animation");
-					btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
-				}
+				checkScroll();
 			} else {
 				clearActiveHeader(); // clear active header
 				setShow(false); // hide navbar

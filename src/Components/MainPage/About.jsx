@@ -12,33 +12,26 @@ export default function MainPage() {
 			opacity: 0,
 			height: 0,
 			transition: {
-				duration: 0.6,
+				duration: 0.5,
 			},
 		},
 		visible: {
 			opacity: 1,
 			height: "fit-content",
 			transition: {
-				duration: 0.6,
+				duration: 0.5,
 			},
 		},
 	};
 
 	return (
 		<section className='center-flex-column' id='about-me-section'>
-			<div className='center-horizontal-vertical justify wrap-mid'>
+			<div className='center-horizontal-vertical justify about-me-div'>
 				<span className='anchor' id='about-me'></span>
 				<h1 className='display-1 text-center underline-1' style={{ paddingBottom: "6px" }}>
 					A little more about me
 				</h1>
-				<motion.div
-					className='about-me content-outline'
-					ref={contentRef}
-					initial='hidden'
-					animate={contentInView ? "visible" : "hidden"}
-					variants={contentVariants}
-					style={{ overflow: "hidden", position: "absolute" }}
-				>
+				<motion.div className='about-me content-outline' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
 					<p className='subtle-text'>
 						At first, I have never thought of becoming a programmer because I had a feeling that it's a{" "}
 						<strong data-tip data-for='imgPopup-1'>
