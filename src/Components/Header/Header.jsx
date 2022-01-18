@@ -1,9 +1,11 @@
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
+import ClickSound from "../../assets/click.mp3";
 
 export default function Header() {
 	const [showState, setShow] = useState(false);
+	const clickSfx = new Audio(ClickSound);
 
 	useEffect(() => {
 		const btnBackToTop = document.getElementById("btn-back-to-top");
@@ -128,7 +130,7 @@ export default function Header() {
 			<Fade top when={showState}>
 				<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
 					<div className='container-fluid'>
-						<a className='navbar-brand' href='/#' style={{ cursor: showState ? "pointer" : "default" }}>
+						<a className='navbar-brand' href='/#' style={{ cursor: showState ? "pointer" : "default" }} onClick={() => clickSfx.play()}>
 							<span style={{ fontSize: "26px" }}>Dadangdut33</span>
 						</a>
 						<button
@@ -145,17 +147,17 @@ export default function Header() {
 						<div className='collapse navbar-collapse' id='navbarNavDropdown'>
 							<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
 								<li className='nav-item'>
-									<a className='nav-link' aria-current='page' href={"#about-me"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
+									<a className='nav-link' aria-current='page' href={"#about-me"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav' onClick={() => clickSfx.play()}>
 										About
 									</a>
 								</li>
 								<li className='nav-item'>
-									<a className='nav-link' href={"#projects"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
+									<a className='nav-link' href={"#projects"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav' onClick={() => clickSfx.play()}>
 										Projects
 									</a>
 								</li>
 								<li className='nav-item'>
-									<a className='nav-link' href={"#contact-me"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
+									<a className='nav-link' href={"#contact-me"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav' onClick={() => clickSfx.play()}>
 										Contact
 									</a>
 								</li>
@@ -165,7 +167,7 @@ export default function Header() {
 				</nav>
 			</Fade>
 			<div>
-				<a href='/#' className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top'>
+				<a href='/#' className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-back-to-top' onClick={() => clickSfx.play()}>
 					<i className='bi bi-arrow-up'></i>
 				</a>
 			</div>

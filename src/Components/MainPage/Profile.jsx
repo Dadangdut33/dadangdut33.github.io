@@ -17,7 +17,7 @@ export default function MainPage() {
 					<div className='flex-dir-row'>
 						<div className='flex-dir-column'>
 							<img src='./logo512.png' alt='Logo' className='logo-main content center-horizontal' />{" "}
-							<motion.div className='center-horizontal' style={{ paddingTop: "4px" }} whileHover={{ scale: 1.1 }}>
+							<div className='center-horizontal' style={{ paddingTop: "4px" }}>
 								<a href='https://github.com/Dadangdut33' target={"_blank"} rel='noreferrer' onMouseEnter={() => hoverSfx.play()} onClick={() => clickSfx.play()}>
 									<i className='bi bi-github pad-small'></i>
 								</a>
@@ -35,7 +35,7 @@ export default function MainPage() {
 										/>
 									</svg>
 								</a>
-							</motion.div>
+							</div>
 						</div>
 						<div className='content'>
 							<div className='flex-dir-row persist'>
@@ -65,10 +65,7 @@ export default function MainPage() {
 							href='#about-me'
 							style={{ margin: "0 auto" }}
 							id='read-more-btn'
-							onMouseEnter={() => {
-								hoverSfx.play();
-								setBtnClass("btn btn-primary");
-							}}
+							onMouseEnter={() => setBtnClass("btn btn-primary")}
 							onMouseLeave={() => setBtnClass("btn btn-primary pulse-animation")}
 							whileHover={{ scale: 1.1 }}
 							onClick={() => clickSfx.play()}
