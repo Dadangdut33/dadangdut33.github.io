@@ -19,6 +19,24 @@
     animation: pulse 2s;
 }
 
+.fadeout-animation {
+    animation: fadeout 0.5s ease-in-out;
+}
+
+.fadein-animation {
+    animation: fadein 0.5s ease-in-out;
+}
+
+.moveLeft-animation {
+    animation: moveLeft 0.7s ease-in-out;
+    right: 80px;
+}
+
+.moveRight-animation {
+    animation: moveRight 0.7s ease-in-out;
+    right: 10px;
+}
+
 @keyframes pulse {
     0% {
         /* transform: scale(0.95); */
@@ -55,5 +73,45 @@
     100% {
         transform: translateY(100%);
         opacity: 0.7;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        right: 10px;
+    }
+
+    100% {
+        right: 80px;
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        right: 80px;
+    }
+
+    100% {
+        right: 10px;
     }
 }

@@ -5,7 +5,6 @@ import lightLogo from "./light.svg";
 
 export default function DarkModeToggle() {
 	const [checked, setChecked] = React.useState(localStorage.getItem("bgmode") === "dark" ? true : false);
-
 	const [logo, setLogo] = React.useState(checked ? darkLogo : lightLogo);
 
 	const setDarkMode = () => {

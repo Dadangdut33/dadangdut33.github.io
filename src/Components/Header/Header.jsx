@@ -59,8 +59,17 @@ export default function Header() {
 			componentHeight = aboutComp.offsetHeight;
 		};
 
+		var darkModeToggler = document.querySelector(".darkmode-toggler");
+
+		// startup check
+		if (window.scrollY > 400) {
+			darkModeToggler.classList.remove("moveRight-animation");
+			darkModeToggler.classList.add("moveLeft-animation");
+		}
 		window.onscroll = () => {
 			if (window.scrollY > 400) {
+				darkModeToggler.classList.remove("moveRight-animation");
+				darkModeToggler.classList.add("moveLeft-animation");
 				setShow(true);
 				// show/hide back to top btn and check the bg mode
 				if (document.body.classList.contains("bg-dark")) {
@@ -90,6 +99,11 @@ export default function Header() {
 					btnBackToTop.className = "btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation";
 				} else {
 					btnBackToTop.className = "btn btn-outline-dark btn-rounded slide-in-bottom-disappear-animation";
+				}
+				// add moveright only if there is any
+				if (darkModeToggler.classList.contains("moveLeft-animation")) {
+					darkModeToggler.classList.remove("moveLeft-animation");
+					darkModeToggler.classList.add("moveRight-animation");
 				}
 			}
 		};
