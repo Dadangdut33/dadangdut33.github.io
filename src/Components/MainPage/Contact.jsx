@@ -2,7 +2,11 @@ import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import HoverSound from "../../assets/hover.mp3";
+import ClickSound from "../../assets/click.mp3";
 export default function BottomTest() {
+	const hoverSfx = new Audio(HoverSound);
+	const clickSfx = new Audio(ClickSound);
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: false,
 		rootMargin: "-270px 0px",
@@ -31,13 +35,13 @@ export default function BottomTest() {
 		hidden: {
 			opacity: 0,
 			transition: {
-				duration: 0.3,
+				duration: 0.15,
 			},
 		},
 		visible: {
 			opacity: 1,
 			transition: {
-				duration: 0.3,
+				duration: 0.15,
 			},
 		},
 	};
@@ -51,7 +55,18 @@ export default function BottomTest() {
 					<div className='center-horizontal-vertical justify wrap-mid'>
 						<p style={{ minWidth: "210px" }}>
 							<i class='bi bi-envelope'></i>{" "}
-							<a href='mailto:dadang.contact@gmail.com' target={"_blank"} rel='noreferrer' className='no-decoration' onMouseEnter={() => setHoverLink_1(true)} onMouseLeave={() => setHoverLink_1(false)}>
+							<a
+								href='mailto:dadang.contact@gmail.com'
+								target={"_blank"}
+								rel='noreferrer'
+								className='no-decoration'
+								onMouseEnter={() => {
+									hoverSfx.play();
+									setHoverLink_1(true);
+								}}
+								onMouseLeave={() => setHoverLink_1(false)}
+								onClick={() => clickSfx.play()}
+							>
 								dadang.contact@gmail.com{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_1 ? "visible" : "hidden"}>
 									◀
@@ -60,7 +75,18 @@ export default function BottomTest() {
 						</p>
 						<p>
 							<i className='bi bi-github'></i>{" "}
-							<a href='https://github.com/Dadangdut33' target={"_blank"} rel='noreferrer' className='no-decoration' onMouseEnter={() => setHoverLink_2(true)} onMouseLeave={() => setHoverLink_2(false)}>
+							<a
+								href='https://github.com/Dadangdut33'
+								target={"_blank"}
+								rel='noreferrer'
+								className='no-decoration'
+								onMouseEnter={() => {
+									hoverSfx.play();
+									setHoverLink_2(true);
+								}}
+								onMouseLeave={() => setHoverLink_2(false)}
+								onClick={() => clickSfx.play()}
+							>
 								Dadangdut33{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_2 ? "visible" : "hidden"}>
 									◀
@@ -74,8 +100,12 @@ export default function BottomTest() {
 								target={"_blank"}
 								rel='noreferrer'
 								className='no-decoration'
-								onMouseEnter={() => setHoverLink_3(true)}
+								onMouseEnter={() => {
+									hoverSfx.play();
+									setHoverLink_3(true);
+								}}
 								onMouseLeave={() => setHoverLink_3(false)}
+								onClick={() => clickSfx.play()}
 							>
 								Fauzan Farhan Antoro{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_3 ? "visible" : "hidden"}>
