@@ -51,6 +51,13 @@ span.anchor {
     transform: scale(1.1);
 }
 
+.darkmode-toggler {
+    position: fixed;
+    top: 2px;
+    z-index: 99999;
+    right: 10px;
+}
+
 .hidden {
     display: none;
 }

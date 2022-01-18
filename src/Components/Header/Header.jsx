@@ -105,6 +105,7 @@ export default function Header() {
 
 	return (
 		<>
+			<DarkModeToggle />
 			<Fade top when={showState}>
 				<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
 					<div className='container-fluid'>
@@ -140,9 +141,6 @@ export default function Header() {
 									</a>
 								</li>
 							</ul>
-							<div className='d-flex' style={{ marginBottom: "7px" }}>
-								<DarkModeToggle />
-							</div>
 						</div>
 					</div>
 				</nav>
