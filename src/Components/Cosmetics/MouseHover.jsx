@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-
+import { useDeviceSelectors } from "react-device-detect";
 export default function MouseHover() {
+	const [selectors] = useDeviceSelectors(window.navigator.userAgent);
+	const { isMobile } = selectors;
+
 	const cursorX = useMotionValue(-100);
 	const cursorY = useMotionValue(-100);
 
@@ -10,17 +13,19 @@ export default function MouseHover() {
 	const cursorYSpring = useSpring(cursorY, springConfig);
 
 	useEffect(() => {
-		const moveCursor = (e) => {
-			cursorX.set(e.clientX - 16);
-			cursorY.set(e.clientY - 16);
-		};
+		if (!isMobile) {
+			const moveCursor = (e) => {
+				cursorX.set(e.clientX - 16);
+				cursorY.set(e.clientY - 16);
+			};
 
-		window.addEventListener("mousemove", moveCursor);
+			window.addEventListener("mousemove", moveCursor);
 
-		return () => {
-			window.removeEventListener("mousemove", moveCursor);
-		};
-	}, [cursorX, cursorY]);
+			return () => {
+				window.removeEventListener("mousemove", moveCursor);
+			};
+		}
+	}, [cursorX, cursorY, isMobile]);
 
 	return (
 		<motion.div

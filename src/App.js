@@ -10,15 +10,12 @@ import Projects from "./Components/MainPage/Projects";
 import Contact from "./Components/MainPage/Contact";
 import MouseHover from "./Components/Cosmetics/MouseHover";
 import RandomDots from "./Components/Cosmetics/RandomDots";
-import { BrowserView } from "react-device-detect";
 
 function App() {
 	return (
 		<>
 			<RandomDots />
-			<BrowserView>
-				<MouseHover />
-			</BrowserView>
+			<MouseHover />
 			<Header />
 			<main className='App'>
 				<MainPage />
