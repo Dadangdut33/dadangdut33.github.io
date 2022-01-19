@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function RandomDots() {
 	// random dots appearing on the bg of the screen
 	const [dots, setDots] = useState([]);
-	const dotsCount = 250;
+	const dotsCount = 200;
 
 	const addDots = () => {
 		const newDots = [];
@@ -29,7 +29,7 @@ export default function RandomDots() {
 	return (
 		<div className='dots-bg'>
 			{dots.map((dot, index) => (
-				<motion.div
+				<motion.span
 					key={index}
 					className='random-dot'
 					style={{

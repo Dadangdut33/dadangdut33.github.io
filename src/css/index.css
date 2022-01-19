@@ -39,6 +39,10 @@ span.anchor {
     visibility: hidden;
 }
 
+.dots-bg {
+    z-index: -1;
+}
+
 .bg-light {
     background-color: #fbfcfe !important;
 }
