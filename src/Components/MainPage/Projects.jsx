@@ -33,6 +33,7 @@ export default function MainPage() {
 			opacity: 0,
 			transition: {
 				duration: 0.5,
+				delay: 1,
 			},
 		},
 		visible: {
@@ -63,6 +64,7 @@ export default function MainPage() {
 			scale: 0,
 			transition: {
 				duration: 0.5,
+				delay: 0.3,
 			},
 		},
 		visible: {
@@ -79,6 +81,7 @@ export default function MainPage() {
 			scale: 0,
 			transition: {
 				duration: 0.5,
+				delay: 0.6,
 			},
 		},
 		visible: {

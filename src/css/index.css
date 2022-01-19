@@ -287,8 +287,12 @@ span.cursor.typing {
 }
 
 /* media-query */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
     .justify {
+        max-width: 90%;
+    }
+
+    .about-me {
         max-width: 90%;
     }
 }
@@ -296,10 +300,6 @@ span.cursor.typing {
 @media only screen and (max-width: 768px) {
     .cursor {
         display: none;
-    }
-
-    .about-me {
-        max-width: 90%;
     }
 }
 
