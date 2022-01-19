@@ -3,9 +3,13 @@ import { motion } from "framer-motion";
 export default function RandomDots() {
 	// random dots appearing on the bg of the screen
 	const [dots, setDots] = useState([]);
-	const dotsCount = 200;
+	var dotsCount = 200;
 
 	const addDots = () => {
+		if (window.innerWidth < 575) {
+			dotsCount = 100;
+		}
+
 		const newDots = [];
 		for (let i = 0; i < dotsCount; i++) {
 			newDots.push({
@@ -24,7 +28,16 @@ export default function RandomDots() {
 
 	useEffect(() => {
 		addDots();
-	}, [dotsCount]);
+
+		// add event listeners for window resizing
+		window.addEventListener("resize", addDots);
+
+		return () => {
+			window.removeEventListener("resize", addDots);
+		};
+
+		// eslint-disable-next-line
+	}, []);
 
 	return (
 		<div className='dots-bg'>
