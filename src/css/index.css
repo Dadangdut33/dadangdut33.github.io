@@ -50,7 +50,7 @@ span.anchor {
 }
 
 span.anchor#projects {
-    top: -220px;
+    top: -150px;
 }
 
 .no-decoration {
@@ -193,7 +193,6 @@ span.anchor#projects {
     min-width: auto;
     left: 40px;
     right: 0;
-    overflow: hidden;
     position: absolute;
 }
 
@@ -206,6 +205,18 @@ span.anchor#projects {
     height: auto;
 }
 
+/* card */
+.card-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    margin-top: 15px;
+    max-width: 150px;
+    min-width: 150px;
+}
+
+/* arrow goto top and bottom */
 #btn-goto-top {
     position: fixed;
     bottom: 70px;
@@ -220,6 +231,7 @@ span.anchor#projects {
     z-index: 99999;
 }
 
+/* typewriter */
 .cursor {
     position: fixed;
     left: 0;
@@ -274,7 +286,7 @@ span.cursor.typing {
     }
 }
 
-
+/* media-query */
 @media only screen and (max-width: 800px) {
     .justify {
         max-width: 90%;
@@ -336,6 +348,21 @@ span.cursor.typing {
 
     .contact-me {
         left: 45px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .projects {
+        margin-top: -90px;
+        left: 5px;
+    }
+
+    span.anchor#projects {
+        top: -75px;
+    }
+
+    span.anchor#about-me {
+        top: -130px;
     }
 }
 

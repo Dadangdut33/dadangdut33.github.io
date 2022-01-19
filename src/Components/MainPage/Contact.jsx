@@ -14,7 +14,7 @@ export default function BottomTest() {
 
 	const contentVariants = {
 		hidden: {
-			height: "0px",
+			height: 0,
 			transition: {
 				duration: 0.6,
 			},

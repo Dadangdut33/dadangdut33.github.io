@@ -5,7 +5,7 @@ export default function MouseHover() {
 	const cursorX = useMotionValue(-100);
 	const cursorY = useMotionValue(-100);
 
-	const springConfig = { damping: 25, stiffness: 250 };
+	const springConfig = { damping: 25, stiffness: 252 };
 	const cursorXSpring = useSpring(cursorX, springConfig);
 	const cursorYSpring = useSpring(cursorY, springConfig);
 
