@@ -58,7 +58,7 @@ export default function BottomTest() {
 							<a
 								href='mailto:dadang.contact@gmail.com'
 								target={"_blank"}
-								rel='noreferrer'
+								rel='noopener noreferrer'
 								className='no-decoration'
 								onMouseEnter={() => {
 									hoverSfx.play();
@@ -78,7 +78,7 @@ export default function BottomTest() {
 							<a
 								href='https://github.com/Dadangdut33'
 								target={"_blank"}
-								rel='noreferrer'
+								rel='noopener noreferrer'
 								className='no-decoration'
 								onMouseEnter={() => {
 									hoverSfx.play();
@@ -98,7 +98,7 @@ export default function BottomTest() {
 							<a
 								href='https://www.linkedin.com/in/fauzan-farhan-antoro/'
 								target={"_blank"}
-								rel='noreferrer'
+								rel='noopener noreferrer'
 								className='no-decoration'
 								onMouseEnter={() => {
 									hoverSfx.play();

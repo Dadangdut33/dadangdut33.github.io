@@ -54,7 +54,7 @@ export default function MainPage() {
 										<p className='card-text'>A minesweeper game made using React.js and randomwalk algorithm as the randomizer</p>
 										<p className='card-text'>
 											<small className='text-muted'>
-												<a href='https://github.com/Dadangdut33/minesweeper-randomwalk' className='subtle-link' target={"_blank"} rel='noreferrer'>
+												<a href='https://github.com/Dadangdut33/minesweeper-randomwalk' className='subtle-link' target={"_blank"} rel='noopener noreferrer'>
 													Look at the code on Github
 												</a>
 											</small>
@@ -79,7 +79,7 @@ export default function MainPage() {
 										<p className='card-text'>An Easy to Use OCR/Screen Translator made by using Python and Tesseract.</p>
 										<p className='card-text'>
 											<small className='text-muted'>
-												<a href='https://github.com/Dadangdut33/Screen-Translate' className='subtle-link' target={"_blank"} rel='noreferrer'>
+												<a href='https://github.com/Dadangdut33/Screen-Translate' className='subtle-link' target={"_blank"} rel='noopener noreferrer'>
 													Look at the code on Github
 												</a>
 											</small>
@@ -90,7 +90,15 @@ export default function MainPage() {
 						</div>
 						<div className='card mb-2' style={{ maxWidth: "540px" }}>
 							<div className='card-body bg-light'>
-								<motion.h5 className='card-title text-center' style={{ cursor: "pointer" }} whileHover={{ scale: 1.1 }} onClick={() => clickSfx.play()}>
+								<motion.h5
+									className='card-title text-center'
+									style={{ cursor: "pointer" }}
+									whileHover={{ scale: 1.1 }}
+									onClick={() => {
+										clickSfx.play();
+										window.open("https://github.com/Dadangdut33?tab=repositories", "_blank", "noopener noreferrer");
+									}}
+								>
 									Visit my Github for More
 								</motion.h5>
 							</div>
