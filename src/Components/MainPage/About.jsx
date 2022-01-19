@@ -35,7 +35,7 @@ export default function MainPage() {
 			<div className='center-horizontal-vertical justify about-me-div'>
 				<span className='anchor' id='about-me'></span>
 				<h1 className={"display-1 text-center"} style={{ paddingBottom: "30px" }}>
-					A little more about me<span className={contentInView2 ? "display-1 text-center underline-smooth origin-right show-from-left" : "display-1 text-center underline-smooth origin-right"}></span>
+					A Little More About Me<span className={contentInView2 ? "display-1 text-center underline-smooth origin-right show-from-left" : "display-1 text-center underline-smooth origin-right"}></span>
 				</h1>
 				<motion.div className='about-me content-outline' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
 					<div ref={contentRef2}>
