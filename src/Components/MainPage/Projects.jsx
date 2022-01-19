@@ -5,7 +5,7 @@ import ClickSound from "../../assets/click.mp3";
 export default function MainPage() {
 	const clickSfx = new Audio(ClickSound);
 	const [contentRef, contentInView] = useInView({
-		triggerOnce: false,
+		triggerOnce: true,
 		rootMargin: "0px 0px -300px",
 	});
 

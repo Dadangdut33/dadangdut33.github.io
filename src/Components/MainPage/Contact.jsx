@@ -8,7 +8,7 @@ export default function BottomTest() {
 	const hoverSfx = new Audio(HoverSound);
 	const clickSfx = new Audio(ClickSound);
 	const [contentRef, contentInView] = useInView({
-		triggerOnce: false,
+		triggerOnce: true,
 		rootMargin: "-270px 0px",
 	});
 

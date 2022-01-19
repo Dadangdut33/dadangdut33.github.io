@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export default function MainPage() {
 	const [contentRef, contentInView] = useInView({
-		triggerOnce: false,
+		triggerOnce: true,
 		rootMargin: "-250px 0px",
 	});
 
