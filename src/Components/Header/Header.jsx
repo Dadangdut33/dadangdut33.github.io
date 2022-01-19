@@ -8,7 +8,7 @@ export default function Header() {
 	const clickSfx = new Audio(ClickSound);
 
 	const [before, setBefore] = useState("/#");
-	const [after, setAfter] = useState("");
+	const [after, setAfter] = useState("/#");
 
 	useEffect(() => {
 		const btnGotoTop = document.getElementById("btn-goto-top");
@@ -17,11 +17,6 @@ export default function Header() {
 
 		const checkScroll = () => {
 			setShow(true);
-			// darkmode toggler
-			if (window.innerWidth < 575) {
-				darkModeToggler.classList.remove("moveRight-animation");
-				darkModeToggler.classList.add("moveLeft-animation");
-			}
 
 			if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 200) {
 				clearActiveHeader();
@@ -34,7 +29,7 @@ export default function Header() {
 				btnGotoBottom.classList.add("slide-in-bottom-animation");
 			}
 
-			if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 400) {
+			if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 600) {
 				clearActiveHeader();
 				projectsNav.classList.add("active");
 				setBefore("/#about-me");
@@ -63,10 +58,24 @@ export default function Header() {
 			}
 		};
 
+		const darkModeTogglerPosition = (onstart = false) => {
+			// darkmode toggler
+			if (window.innerWidth < 575) {
+				darkModeToggler.classList.remove("moveRight-animation");
+				darkModeToggler.classList.add("moveLeft-animation");
+			} else {
+				if (!onstart) {
+					darkModeToggler.classList.remove("moveLeft-animation");
+					darkModeToggler.classList.add("moveRight-animation");
+				}
+			}
+		};
+
 		// check on startup
 		if (window.scrollY > 400) {
-			checkScroll();
+			checkScroll(true);
 			checkBgColor();
+			darkModeTogglerPosition(true);
 		} else {
 			btnGotoTop.style.display = "none";
 			btnGotoBottom.style.display = "none";
@@ -124,11 +133,13 @@ export default function Header() {
 		// listeners
 		window.onresize = () => {
 			componentHeight = aboutComp.offsetHeight;
+			darkModeTogglerPosition();
 		};
 
 		window.onscroll = () => {
 			if (window.scrollY > 400) {
 				checkScroll();
+				darkModeTogglerPosition();
 			} else {
 				clearActiveHeader(); // clear active header
 				setShow(false); // hide navbar

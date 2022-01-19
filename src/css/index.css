@@ -50,7 +50,7 @@ span.anchor {
 }
 
 span.anchor#projects {
-    top: -140px;
+    top: -220px;
 }
 
 .no-decoration {
@@ -275,13 +275,13 @@ span.cursor.typing {
 }
 
 
-@media only screen and (max-device-width: 800px) {
+@media only screen and (max-width: 800px) {
     .justify {
         max-width: 90%;
     }
 }
 
-@media only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 768px) {
     .cursor {
         display: none;
     }
@@ -291,7 +291,7 @@ span.cursor.typing {
     }
 }
 
-@media only screen and (max-device-width: 650px) {
+@media only screen and (max-width: 650px) {
     .flex-dir-row {
         flex-direction: column !important;
     }
@@ -301,17 +301,30 @@ span.cursor.typing {
     }
 }
 
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-width: 600px) {
     .projects {
         -webkit-transform: scale(0.8);
         transform: scale(0.8);
         left: 10px;
         margin-top: -60px;
     }
-
 }
 
 @media only screen and (max-device-width: 575px) {
+    .about-me-div {
+        margin-top: -10px;
+    }
+
+    span.anchor#about-me {
+        top: -170px;
+    }
+
+    span.anchor#projects {
+        top: -140px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
 
     .mobile-hidden {
         display: none;
@@ -319,18 +332,6 @@ span.cursor.typing {
 
     .about-me {
         max-width: 80%;
-    }
-
-    .about-me-div {
-        margin-top: -10px;
-    }
-
-    span.anchor#about-me {
-        top: -130px;
-    }
-
-    span.anchor#projects {
-        top: -150px;
     }
 
     .contact-me {

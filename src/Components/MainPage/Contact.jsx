@@ -54,7 +54,7 @@ export default function BottomTest() {
 				<motion.div className='contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
 					<div className='center-horizontal-vertical'>
 						<p>
-							<i class='bi bi-envelope'></i>{" "}
+							<i className='bi bi-envelope'></i>{" "}
 							<a
 								href='mailto:dadang.contact@gmail.com'
 								target={"_blank"}
