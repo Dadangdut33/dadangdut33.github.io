@@ -2,7 +2,6 @@ import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import ClickSound from "../../assets/click.mp3";
-
 export default function Header() {
 	const [showState, setShow] = useState(false);
 	const clickSfx = new Audio(ClickSound);

@@ -2,7 +2,7 @@ import Pulse from "react-reveal/Jump";
 import Fade from "react-reveal/Fade";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import TypeWriter from "./TypeWriter";
+import TypeWriter from "../Cosmetics/TypeWriter";
 import HoverSound from "../../assets/hover.mp3";
 import ClickSound from "../../assets/click.mp3";
 export default function MainPage() {

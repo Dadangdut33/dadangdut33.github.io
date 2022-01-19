@@ -8,11 +8,13 @@ import MainPage from "./Components/MainPage/Profile";
 import AboutMe from "./Components/MainPage/About";
 import Projects from "./Components/MainPage/Projects";
 import Contact from "./Components/MainPage/Contact";
-import MouseHover from "./Components/MainPage/MouseHover";
+import MouseHover from "./Components/Cosmetics/MouseHover";
+import RandomDots from "./Components/Cosmetics/RandomDots";
 
 function App() {
 	return (
 		<>
+			<RandomDots />
 			<MouseHover />
 			<Header />
 			<main className='App'>
