@@ -58,13 +58,13 @@ export default function Header() {
 			}
 		};
 
-		const darkModeTogglerPosition = (onstart = false) => {
+		const darkModeTogglerPosition = () => {
 			// darkmode toggler
 			if (window.innerWidth < 575) {
 				darkModeToggler.classList.remove("moveRight-animation");
 				darkModeToggler.classList.add("moveLeft-animation");
 			} else {
-				if (!onstart) {
+				if (darkModeToggler.classList.contains("moveLeft-animation")) {
 					darkModeToggler.classList.remove("moveLeft-animation");
 					darkModeToggler.classList.add("moveRight-animation");
 				}
@@ -75,7 +75,7 @@ export default function Header() {
 		if (window.scrollY > 400) {
 			checkScroll(true);
 			checkBgColor();
-			darkModeTogglerPosition(true);
+			darkModeTogglerPosition();
 		} else {
 			btnGotoTop.style.display = "none";
 			btnGotoBottom.style.display = "none";

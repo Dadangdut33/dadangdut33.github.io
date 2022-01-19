@@ -7,7 +7,7 @@ export default function Footer() {
 					<KoFi color='29abe0' id='dadangdut33' label='Buy Me a Ko-Fi' />
 				</section>
 			</div>
-			<div className='text-center p-3' style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+			<div className='text-center p-3 footer-light' id='footer'>
 				© 2021 <strong>Dadangdut33</strong>
 			</div>
 		</footer>

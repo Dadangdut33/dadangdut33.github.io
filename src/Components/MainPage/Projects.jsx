@@ -9,25 +9,6 @@ export default function MainPage() {
 		rootMargin: "0px 0px -300px",
 	});
 
-	// startup
-	useEffect(() => {
-		// check on startup
-		const cards = document.querySelectorAll(".card-body");
-		var i = 0;
-		var interval = setInterval(() => {
-			if (i > 100) clearInterval(interval);
-			// check bg type in body
-			if (document.body.classList.contains("bg-dark")) {
-				cards.forEach((card) => {
-					card.className = card.className.replace("bg-light", "bg-dark");
-				});
-			}
-			i++;
-		}, 100);
-
-		return () => clearInterval(interval);
-	}, [contentInView]);
-
 	const parentVariants = {
 		hidden: {
 			opacity: 0,

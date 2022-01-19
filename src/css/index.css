@@ -39,6 +39,18 @@ span.anchor {
     visibility: hidden;
 }
 
+.bg-light {
+    background-color: #fbfcfe !important;
+}
+
+.footer-light {
+    background-color: #f291fd;
+}
+
+.footer-dark {
+    background-color: #1a1e21;
+}
+
 .tiny-icon {
     display: inline-block;
 }
