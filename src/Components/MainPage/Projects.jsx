@@ -12,8 +12,6 @@ export default function MainPage() {
 	const [contentRef2, contentInView2] = useInView({
 		triggerOnce: false,
 		rootMargin: "-150px 0px -300px",
-		// rootMargin: "-100px 0px 0px",
-		// rootMargin: "-180px 0px -200px",
 	});
 
 	const parentVariants = {
