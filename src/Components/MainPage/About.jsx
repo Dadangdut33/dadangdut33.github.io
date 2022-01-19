@@ -37,9 +37,6 @@ export default function MainPage() {
 						<strong data-tip data-for='imgPopup-1'>
 							hard job
 						</strong>
-						<ReactTooltip id='imgPopup-1' className='tooltip-img'>
-							<img src='https://c.tenor.com/OB4K11sbmrMAAAAM/spongebob-thinking.gif' alt='thinking-hard-gif' />
-						</ReactTooltip>
 						, but then i realize that other stuff are also hard. So, why don't i try to pursue something that i could enjoy and ... here I am.
 					</p>
 					<p className='subtle-text'>
@@ -48,6 +45,9 @@ export default function MainPage() {
 					</p>
 					<p className='subtle-text'>I really hope things that i create can be useful, even if just a little.</p>
 				</motion.div>
+				<ReactTooltip id='imgPopup-1' className='tooltip-img'>
+					<img src='https://c.tenor.com/OB4K11sbmrMAAAAM/spongebob-thinking.gif' alt='thinking-hard-gif' />
+				</ReactTooltip>
 			</div>
 		</section>
 	);
