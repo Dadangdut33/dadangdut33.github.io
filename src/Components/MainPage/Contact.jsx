@@ -12,6 +12,11 @@ export default function BottomTest() {
 		rootMargin: "-270px 0px",
 	});
 
+	const [contentRef2, contentInView2] = useInView({
+		triggerOnce: false,
+		rootMargin: "-90px 0px",
+	});
+
 	const contentVariants = {
 		hidden: {
 			height: 0,
@@ -50,9 +55,11 @@ export default function BottomTest() {
 		<section className='flex-dir-column' id='contact-me-section'>
 			<div className='center-horizontal-vertical'>
 				<span className='anchor' id='contact-me'></span>
-				<h1 className='display-1 text-center'>Contact Me</h1>
+				<h1 className='display-1 text-center'>
+					Contact Me<span className={contentInView2 ? "display-1 text-center underline-smooth origin-center show-from-middle" : "display-1 text-center underline-smooth origin-center"}></span>
+				</h1>
 				<motion.div className='contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
-					<div className='center-horizontal-vertical'>
+					<div className='center-horizontal-vertical' ref={contentRef2}>
 						<p>
 							<i className='bi bi-envelope'></i>{" "}
 							<a

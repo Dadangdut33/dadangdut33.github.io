@@ -10,7 +10,7 @@ export default function MainPage() {
 
 	const [contentRef2, contentInView2] = useInView({
 		triggerOnce: false,
-		rootMargin: "-300px 0px",
+		rootMargin: "-400px 0px -400px",
 	});
 
 	const contentVariants = {
@@ -18,14 +18,14 @@ export default function MainPage() {
 			opacity: 0,
 			height: 0,
 			transition: {
-				duration: 0.5,
+				duration: 0.8,
 			},
 		},
 		visible: {
 			opacity: 1,
 			height: "fit-content",
 			transition: {
-				duration: 0.5,
+				duration: 0.8,
 			},
 		},
 	};
@@ -34,8 +34,8 @@ export default function MainPage() {
 		<section className='center-flex-column' id='about-me-section'>
 			<div className='center-horizontal-vertical justify about-me-div'>
 				<span className='anchor' id='about-me'></span>
-				<h1 className='display-1 text-center underline-1' style={{ paddingBottom: "6px" }}>
-					A little more about me
+				<h1 className={"display-1 text-center"} style={{ paddingBottom: "30px" }}>
+					A little more about me<span className={contentInView2 ? "display-1 text-center underline-smooth origin-right show-from-left" : "display-1 text-center underline-smooth origin-right"}></span>
 				</h1>
 				<motion.div className='about-me content-outline' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
 					<div ref={contentRef2}>

@@ -92,6 +92,45 @@ span.anchor#projects {
     display: none;
 }
 
+.underline-smooth {
+    display: block;
+    position: relative;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    left: 0;
+    margin-top: -10px;
+    background-color: #0087ca;
+    transition: transform 0.8s ease-out;
+}
+
+.origin-left {
+    transform-origin: bottom left;
+}
+
+.origin-right {
+    transform-origin: bottom right;
+}
+
+.origin-center {
+    transform-origin: bottom center;
+}
+
+.show-from-right {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+}
+
+.show-from-left {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.show-from-middle {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
 .subtle-link {
     display: inline-block;
     position: relative;

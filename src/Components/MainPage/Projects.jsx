@@ -9,6 +9,13 @@ export default function MainPage() {
 		rootMargin: "0px 0px -300px",
 	});
 
+	const [contentRef2, contentInView2] = useInView({
+		triggerOnce: false,
+		rootMargin: "-150px 0px -300px",
+		// rootMargin: "-100px 0px 0px",
+		// rootMargin: "-180px 0px -200px",
+	});
+
 	const parentVariants = {
 		hidden: {
 			opacity: 0,
@@ -78,8 +85,9 @@ export default function MainPage() {
 		<section className='center-flex-column' id='projects-section'>
 			<div className='center-horizontal-vertical'>
 				<span className='anchor' id='projects' style={{ marginTop: "-100px" }}></span>
-				<h1 className='text-center' ref={contentRef}>
-					Some of My Repositories
+				<h1 className='text-center' ref={contentRef} style={{ paddingBottom: "5px" }}>
+					<span ref={contentRef2}>Some of My Repositories</span>
+					<span className={contentInView2 ? "display-1 text-center underline-smooth origin-left show-from-right" : "display-1 text-center underline-smooth origin-left"} style={{ marginTop: "0" }}></span>
 				</h1>
 				<motion.div className='projects' initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={parentVariants}>
 					<motion.div className='card mb-3' style={{ maxWidth: "540px" }} variants={childVariants_1}>
