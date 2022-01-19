@@ -59,7 +59,7 @@ export default function Header() {
 
 		const darkModeTogglerPosition = () => {
 			// darkmode toggler
-			if (window.innerWidth < 575) {
+			if (window.innerWidth < 575 && window.scrollY > 400) {
 				darkModeToggler.classList.remove("moveRight-animation");
 				darkModeToggler.classList.add("moveLeft-animation");
 			} else {
