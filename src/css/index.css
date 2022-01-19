@@ -410,6 +410,9 @@ span.cursor.typing {
 }
 
 @media only screen and (max-width: 575px) {
+    .underline-smooth {
+        margin-top: -5px;
+    }
 
     .mobile-hidden {
         display: none;
