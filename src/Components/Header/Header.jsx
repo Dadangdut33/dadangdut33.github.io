@@ -129,13 +129,12 @@ export default function Header() {
 			contactNav.classList.remove("active");
 		};
 
-		// listeners
-		window.onresize = () => {
+		const resizeListener = () => {
 			componentHeight = aboutComp.offsetHeight;
 			darkModeTogglerPosition();
 		};
 
-		window.onscroll = () => {
+		const onscrollListener = () => {
 			if (window.scrollY > 400) {
 				checkScroll();
 				darkModeTogglerPosition();
@@ -157,13 +156,17 @@ export default function Header() {
 			}
 		};
 
+		// listeners
+		window.addEventListener("resize", resizeListener);
+		window.addEventListener("scroll", onscrollListener);
+
 		return () => {
 			// cleanup
 			clearInterval(intervalBgCheck);
 			btnGotoTop.removeEventListener("animationend", displayBtnBackToTop, false);
 			btnGotoBottom.removeEventListener("animationend", displayBtnGotoBottom, false);
-			window.onresize = null;
-			window.onscroll = null;
+			window.removeEventListener("resize", resizeListener);
+			window.removeEventListener("scroll", onscrollListener);
 		};
 	}, []);
 
