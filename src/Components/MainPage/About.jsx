@@ -1,11 +1,7 @@
 import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useDeviceSelectors } from "react-device-detect";
 export default function MainPage() {
-	const [selectors] = useDeviceSelectors(window.navigator.userAgent);
-	const { isMobile } = selectors;
-
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: true,
 		rootMargin: "-250px 0px",
@@ -13,7 +9,7 @@ export default function MainPage() {
 
 	const [contentRef2, contentInView2] = useInView({
 		triggerOnce: false,
-		rootMargin: isMobile ? "-250px 0px" : "-400px 0px",
+		rootMargin: "-250px 0px",
 	});
 
 	const contentVariants = {
