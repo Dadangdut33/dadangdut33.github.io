@@ -63,7 +63,7 @@ export default function BottomTest() {
 						<p>
 							<i className='bi bi-envelope'></i>{" "}
 							<a
-								href='mailto:dadang.contact@gmail.com'
+								href='mailto:contact@dadangdut33.codes'
 								target={"_blank"}
 								rel='noopener noreferrer'
 								className='no-decoration'
@@ -74,7 +74,7 @@ export default function BottomTest() {
 								onMouseLeave={() => setHoverLink_1(false)}
 								onClick={() => clickSfx.play()}
 							>
-								dadang.contact@gmail.com{" "}
+								contact@dadangdut33.codes{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_1 ? "visible" : "hidden"}>
 									◀
 								</motion.span>
