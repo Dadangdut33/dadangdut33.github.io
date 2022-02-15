@@ -1,5 +1,6 @@
 import KoFi from "./KoFI/KoFi";
 export default function Footer() {
+	const currYear = new Date().getFullYear();
 	return (
 		<footer className='text-center text-lg-start'>
 			<div className='container p-4 pb-0'>
@@ -8,7 +9,7 @@ export default function Footer() {
 				</section>
 			</div>
 			<div className='text-center p-3 footer-light' id='footer'>
-				© 2022 <strong>Dadangdut33</strong>
+				© {currYear} <strong>Dadangdut33</strong>
 			</div>
 		</footer>
 	);
