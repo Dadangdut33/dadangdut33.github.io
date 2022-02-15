@@ -27,7 +27,7 @@ export default function Portals() {
 		<section className='center-flex-column' id='portals-section'>
 			<div className='center-horizontal-vertical'>
 				<span className='anchor' id='portals' style={{ marginTop: "-100px" }}></span>
-				<h1 className='text-center' ref={contentRef} style={{ paddingBottom: "5px" }}>
+				<h1 className='text-center header-portals' ref={contentRef} style={{ paddingBottom: "5px" }}>
 					<span>Portals</span>
 					<span
 						className={contentInView ? "display-1 text-center underline-smooth origin-left show-from-right" : "display-1 text-center underline-smooth origin-left"}
@@ -39,7 +39,7 @@ export default function Portals() {
 						<div className='card card-list'>
 							<div className='card-body bg-light'>
 								<h5 className='card-title'>
-									<i class='bi bi-pen'></i> My Blog
+									<i className='bi bi-pen'></i> My Blog
 								</h5>
 								<p className='card-text'>Place where I share some of my thoughts, ideas, and experiences.</p>
 								<a href='https://blog.dadangdut33.codes' target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
@@ -52,19 +52,13 @@ export default function Portals() {
 						<div className='card card-list'>
 							<div className='card-body bg-light'>
 								<h5 className='card-title'>
-									<i class='bi bi-star'></i> Featured Projects: ScreenTranslate
+									<i className='bi bi-star'></i> Featured Projects: ScreenTranslate
 								</h5>
 								<p className='card-text'>An Easy to Use OCR/Screen Translator made using Python and Tesseract.</p>
 								<a href='https://github.com/Dadangdut33/Screen-Translate' target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
 									Project Repository
 								</a>
-								<a
-									href='https://github.com/Dadangdut33/Screen-Translate/releases/latest'
-									target={"_blank"}
-									rel='noopener noreferrer'
-									className='btn btn-info'
-									style={{ marginLeft: "1rem" }}
-								>
+								<a href='https://github.com/Dadangdut33/Screen-Translate/releases/latest' target={"_blank"} rel='noopener noreferrer' className='btn btn-info'>
 									Download
 								</a>
 							</div>
@@ -77,13 +71,13 @@ export default function Portals() {
 						<div className='card card-list'>
 							<div className='card-body bg-light'>
 								<h5 className='card-title'>
-									<i class='bi bi-star'></i> Featured Projects: Minesweeper-Randomwalk
+									<i className='bi bi-star'></i> Featured Projects: Minesweeper-Randomwalk
 								</h5>
 								<p className='card-text'>A minesweeper game made using React.js and randomwalk algorithm as the randomizer</p>
 								<a href='https://github.com/Dadangdut33/minesweeper-randomwalk' target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
 									Project Repository
 								</a>
-								<a href='https://dadangdut33.github.io/minesweeper-randomwalk/' target={"_blank"} rel='noopener noreferrer' className='btn btn-info' style={{ marginLeft: "1rem" }}>
+								<a href='https://dadangdut33.github.io/minesweeper-randomwalk/' target={"_blank"} rel='noopener noreferrer' className='btn btn-info'>
 									Live demo
 								</a>
 							</div>

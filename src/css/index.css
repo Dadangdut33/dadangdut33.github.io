@@ -311,6 +311,10 @@ span.anchor#projects {
     width: 100% !important;
 }
 
+.card-body a {
+    margin: 0 .5rem;
+}
+
 /* ========================= */
 /* arrow goto top and bottom */
 #btn-goto-top {
@@ -385,6 +389,12 @@ span.cursor.typing {
 
 /* ========================= */
 /* media-query */
+@media only screen and (max-width: 978px) {
+    .header-portals {
+        margin: 0 1rem;
+    }
+}
+
 @media only screen and (max-width: 850px) {
     .justify {
         max-width: 90%;
@@ -464,6 +474,10 @@ span.cursor.typing {
 
     span.anchor#about-me {
         top: -130px;
+    }
+
+    .card-body a {
+        margin: .5rem;
     }
 }
 
