@@ -8,7 +8,7 @@ export default function Footer() {
 				</section>
 			</div>
 			<div className='text-center p-3 footer-light' id='footer'>
-				© 2021 <strong>Dadangdut33</strong>
+				© 2022 <strong>Dadangdut33</strong>
 			</div>
 		</footer>
 	);
