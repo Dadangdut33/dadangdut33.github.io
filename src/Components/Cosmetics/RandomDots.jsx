@@ -5,10 +5,10 @@ export default function RandomDots() {
 	const [dots, setDots] = useState([]);
 
 	useEffect(() => {
-		var dotsCount = 200;
+		var dotsCount = 140;
 		const addDots = () => {
 			if (window.innerWidth < 575) {
-				dotsCount = 100;
+				dotsCount = 70;
 			}
 
 			const newDots = [];

@@ -1,12 +1,9 @@
-import $ from "jquery";
 import React from "react";
 import darkLogo from "./dark.svg";
 import lightLogo from "./light.svg";
-import ClickSound from "../../assets/click.mp3";
 export default function DarkModeToggle() {
 	const [checked, setChecked] = React.useState(localStorage.getItem("bgmode") === "dark" ? true : false);
 	const [logo, setLogo] = React.useState(checked ? darkLogo : lightLogo);
-	const clickSfx = new Audio(ClickSound);
 
 	const setDarkMode = () => {
 		setChecked(true);
@@ -16,7 +13,14 @@ export default function DarkModeToggle() {
 		});
 
 		document.getElementById("footer").classList.replace("footer-light", "footer-dark");
+		document.getElementById("btn-goto-top").classList.replace("btn-outline-dark", "btn-outline-light");
+		document.getElementById("btn-goto-bottom").classList.replace("btn-outline-dark", "btn-outline-light");
 
+		document.querySelectorAll(".text-dark").forEach((element) => {
+			element.classList.replace("text-dark", "text-light");
+		});
+
+		// document body
 		document.body.classList.add("bg-dark");
 		if (document.body.classList.contains("text-dark")) {
 			document.body.classList.replace("text-dark", "text-light");
@@ -36,7 +40,14 @@ export default function DarkModeToggle() {
 		});
 
 		document.getElementById("footer").classList.replace("footer-dark", "footer-light");
+		document.getElementById("btn-goto-top").classList.replace("btn-outline-light", "btn-outline-dark");
+		document.getElementById("btn-goto-bottom").classList.replace("btn-outline-light", "btn-outline-dark");
 
+		document.querySelectorAll(".text-light").forEach((element) => {
+			element.classList.replace("text-light", "text-dark");
+		});
+
+		// document body
 		document.body.classList.remove("bg-dark");
 		if (document.body.classList.contains("text-light")) {
 			document.body.classList.replace("text-light", "text-dark");
@@ -76,7 +87,7 @@ export default function DarkModeToggle() {
 			setChecked(true);
 			setLogo(darkLogo);
 			var checkExist = setInterval(function () {
-				if ($(".bg-light").length) {
+				if (document.querySelectorAll(".bg-light").length > 0) {
 					clearInterval(checkExist);
 					setDarkMode();
 				}
@@ -98,10 +109,9 @@ export default function DarkModeToggle() {
 					alt='light/dark toggler'
 					viewBox='0 0 16 16'
 					style={{ marginBottom: "7px", cursor: "pointer" }}
-					onClick={() => clickSfx.play()}
 				/>
 			</label>
-			<input className='form-check-input' type={"checkbox"} id='lightSwitch' onChange={toggleBgMode} checked={checked} style={{ marginLeft: "0px", cursor: "pointer" }} onClick={() => clickSfx.play()} />
+			<input className='form-check-input' type={"checkbox"} id='lightSwitch' onChange={toggleBgMode} checked={checked} style={{ marginLeft: "0px", cursor: "pointer" }} />
 		</div>
 	);
 }

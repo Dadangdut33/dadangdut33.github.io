@@ -1,17 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ClickSound from "../../assets/click.mp3";
 export default function MainPage() {
-	const clickSfx = new Audio(ClickSound);
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: true,
 		rootMargin: "0px 0px -300px",
-	});
-
-	const [contentRef2, contentInView2] = useInView({
-		triggerOnce: false,
-		rootMargin: "-150px 0px -300px",
 	});
 
 	const parentVariants = {
@@ -84,8 +77,11 @@ export default function MainPage() {
 			<div className='center-horizontal-vertical'>
 				<span className='anchor' id='projects' style={{ marginTop: "-100px" }}></span>
 				<h1 className='text-center' ref={contentRef} style={{ paddingBottom: "5px" }}>
-					<span ref={contentRef2}>Some of My Repositories</span>
-					<span className={contentInView2 ? "display-1 text-center underline-smooth origin-left show-from-right" : "display-1 text-center underline-smooth origin-left"} style={{ marginTop: "0" }}></span>
+					<span>Some of My Repositories</span>
+					<span
+						className={contentInView ? "display-1 text-center underline-smooth origin-left show-from-right" : "display-1 text-center underline-smooth origin-left"}
+						style={{ marginTop: "0" }}
+					></span>
 				</h1>
 				<motion.div className='projects' initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={parentVariants}>
 					<motion.div className='card mb-3' style={{ maxWidth: "540px" }} variants={childVariants_1}>
@@ -142,10 +138,7 @@ export default function MainPage() {
 								className='card-title text-center'
 								style={{ cursor: "pointer" }}
 								whileHover={{ scale: 1.1 }}
-								onClick={() => {
-									clickSfx.play();
-									window.open("https://github.com/Dadangdut33?tab=repositories", "_blank", "noopener noreferrer");
-								}}
+								onClick={() => window.open("https://github.com/Dadangdut33?tab=repositories", "_blank", "noopener noreferrer")}
 							>
 								Visit my Github for More
 							</motion.h5>

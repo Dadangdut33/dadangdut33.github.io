@@ -7,11 +7,6 @@ export default function MainPage() {
 		rootMargin: "-250px 0px",
 	});
 
-	const [contentRef2, contentInView2] = useInView({
-		triggerOnce: false,
-		rootMargin: "-250px 0px",
-	});
-
 	const contentVariants = {
 		hidden: {
 			opacity: 0,
@@ -34,10 +29,11 @@ export default function MainPage() {
 			<div className='center-horizontal-vertical justify about-me-div'>
 				<span className='anchor' id='about-me'></span>
 				<h1 className={"display-1 text-center"} style={{ paddingBottom: "30px" }}>
-					A Little More About Me<span className={contentInView2 ? "display-1 text-center underline-smooth origin-right show-from-left" : "display-1 text-center underline-smooth origin-right"}></span>
+					A Little More About Me
+					<span className={contentInView ? "display-1 text-center underline-smooth origin-right show-from-left" : "display-1 text-center underline-smooth origin-right"}></span>
 				</h1>
 				<motion.div className='about-me content-outline' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
-					<div ref={contentRef2}>
+					<div>
 						<p className='subtle-text'>
 							At first, I have never thought of becoming a programmer because I had a feeling that it's a{" "}
 							<strong data-tip data-for='imgPopup-1' className='subtle-link'>
@@ -46,8 +42,8 @@ export default function MainPage() {
 							, but then i realize that other stuff are also hard. So, why don't i try to pursue something that i could enjoy and ... here I am.
 						</p>
 						<p className='subtle-text'>
-							I like games, anime, movie, manga, etc. I am very interested in programming, especially in topics related to stuff that I like. I have a passion for learning new things and I am always trying
-							to improve my skills.
+							I like games, anime, movie, manga, etc. I am very interested in programming, especially in topics related to stuff that I like. I have a passion for learning new things and
+							I am always trying to improve my skills.
 						</p>
 						<p className='subtle-text'>I really hope things that i create can be useful, even if just a little.</p>
 					</div>

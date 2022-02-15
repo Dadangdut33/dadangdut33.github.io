@@ -1,13 +1,27 @@
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { useEffect, useState } from "react";
-import Fade from "react-reveal/Fade";
-import ClickSound from "../../assets/click.mp3";
+import { motion } from "framer-motion";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+
 export default function Header() {
 	const [showState, setShow] = useState(false);
-	const clickSfx = new Audio(ClickSound);
 
 	const [before, setBefore] = useState("/#");
 	const [after, setAfter] = useState("/#");
+
+	const fadeFromTop = {
+		hidden: {
+			y: -100,
+			transition: {
+				duration: 0.01,
+			},
+		},
+		visible: {
+			y: 0,
+			transition: {
+				duration: 0.01,
+			},
+		},
+	};
 
 	useEffect(() => {
 		const btnGotoTop = document.getElementById("btn-goto-top");
@@ -80,17 +94,6 @@ export default function Header() {
 			btnGotoBottom.style.display = "none";
 		}
 
-		// check every 100ms for bg change
-		var intervalBgCheck = setInterval(() => {
-			if (document.body.classList.contains("bg-dark")) {
-				btnGotoTop.className = btnGotoTop.className.replace("btn-outline-dark", "btn-outline-light");
-				btnGotoBottom.className = btnGotoBottom.className.replace("btn-outline-dark", "btn-outline-light");
-			} else {
-				btnGotoTop.className = btnGotoTop.className.replace("btn-outline-light", "btn-outline-dark");
-				btnGotoBottom.className = btnGotoBottom.className.replace("btn-outline-light", "btn-outline-dark");
-			}
-		}, 100);
-
 		const displayBtnBackToTop = (ev) => {
 			if (ev.type === "animationend") {
 				if (ev.animationName === "slide-in-top-disappear") {
@@ -162,7 +165,6 @@ export default function Header() {
 
 		return () => {
 			// cleanup
-			clearInterval(intervalBgCheck);
 			btnGotoTop.removeEventListener("animationend", displayBtnBackToTop, false);
 			btnGotoBottom.removeEventListener("animationend", displayBtnGotoBottom, false);
 			window.removeEventListener("resize", resizeListener);
@@ -173,50 +175,54 @@ export default function Header() {
 	return (
 		<>
 			<DarkModeToggle />
-			<Fade top when={showState}>
-				<nav className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top' id='navbar_top'>
-					<div className='container-fluid'>
-						<a className='navbar-brand' href='/#' style={{ cursor: showState ? "pointer" : "default" }} onClick={() => clickSfx.play()}>
-							<span style={{ fontSize: "26px" }}>Dadangdut33</span>
-						</a>
-						<button
-							className='navbar-toggler'
-							type='button'
-							data-bs-toggle='collapse'
-							data-bs-target='#navbarNavDropdown'
-							aria-controls='navbarNavDropdown'
-							aria-expanded='false'
-							aria-label='Toggle navigation'
-						>
-							<span className='navbar-toggler-icon'></span>
-						</button>
-						<div className='collapse navbar-collapse' id='navbarNavDropdown'>
-							<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
-								<li className='nav-item'>
-									<a className='nav-link' aria-current='page' href={"#about-me"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav' onClick={() => clickSfx.play()}>
-										About
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link' href={"#projects"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav' onClick={() => clickSfx.play()}>
-										Projects
-									</a>
-								</li>
-								<li className='nav-item'>
-									<a className='nav-link' href={"#contact-me"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav' onClick={() => clickSfx.play()}>
-										Contact
-									</a>
-								</li>
-							</ul>
-						</div>
+			<motion.nav
+				className='navbar navbar-expand-sm navbar-light bg-light border-bottom fixed-top'
+				id='navbar_top'
+				variants={fadeFromTop}
+				initial={"hidden"}
+				animate={showState ? "visible" : "hidden"}
+			>
+				<div className='container-fluid'>
+					<a className='navbar-brand' href='/#' style={{ cursor: showState ? "pointer" : "default" }}>
+						<span style={{ fontSize: "26px" }}>Dadangdut33</span>
+					</a>
+					<button
+						className='navbar-toggler'
+						type='button'
+						data-bs-toggle='collapse'
+						data-bs-target='#navbarNavDropdown'
+						aria-controls='navbarNavDropdown'
+						aria-expanded='false'
+						aria-label='Toggle navigation'
+					>
+						<span className='navbar-toggler-icon'></span>
+					</button>
+					<div className='collapse navbar-collapse' id='navbarNavDropdown'>
+						<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
+							<li className='nav-item'>
+								<a className='nav-link' aria-current='page' href={"#about-me"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
+									About
+								</a>
+							</li>
+							<li className='nav-item'>
+								<a className='nav-link' href={"#projects"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
+									Projects
+								</a>
+							</li>
+							<li className='nav-item'>
+								<a className='nav-link' href={"#contact-me"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
+									Contact
+								</a>
+							</li>
+						</ul>
 					</div>
-				</nav>
-			</Fade>
+				</div>
+			</motion.nav>
 			<div>
-				<a href={before} className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-goto-top' onClick={() => clickSfx.play()}>
+				<a href={before} className={"btn btn-outline-light btn-rounded slide-in-top-disappear-animation"} id='btn-goto-top'>
 					<i className='bi bi-arrow-up'></i>
 				</a>
-				<a href={after} className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-goto-bottom' onClick={() => clickSfx.play()}>
+				<a href={after} className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-goto-bottom'>
 					<i className='bi bi-arrow-down'></i>
 				</a>
 			</div>

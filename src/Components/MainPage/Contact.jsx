@@ -2,19 +2,10 @@ import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-import HoverSound from "../../assets/hover.mp3";
-import ClickSound from "../../assets/click.mp3";
 export default function BottomTest() {
-	const hoverSfx = new Audio(HoverSound);
-	const clickSfx = new Audio(ClickSound);
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: true,
 		rootMargin: "-270px 0px",
-	});
-
-	const [contentRef2, contentInView2] = useInView({
-		triggerOnce: false,
-		rootMargin: "-90px 0px",
 	});
 
 	const contentVariants = {
@@ -56,10 +47,11 @@ export default function BottomTest() {
 			<div className='center-horizontal-vertical'>
 				<span className='anchor' id='contact-me'></span>
 				<h1 className='display-1 text-center'>
-					Contact Me<span className={contentInView2 ? "display-1 text-center underline-smooth origin-center show-from-middle" : "display-1 text-center underline-smooth origin-center"}></span>
+					Contact Me
+					<span className={contentInView ? "display-1 text-center underline-smooth origin-center show-from-middle" : "display-1 text-center underline-smooth origin-center"}></span>
 				</h1>
 				<motion.div className='contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
-					<div className='center-horizontal-vertical' ref={contentRef2}>
+					<div className='center-horizontal-vertical'>
 						<p>
 							<i className='bi bi-envelope'></i>{" "}
 							<a
@@ -67,12 +59,8 @@ export default function BottomTest() {
 								target={"_blank"}
 								rel='noopener noreferrer'
 								className='no-decoration'
-								onMouseEnter={() => {
-									hoverSfx.play();
-									setHoverLink_1(true);
-								}}
+								onMouseEnter={() => setHoverLink_1(true)}
 								onMouseLeave={() => setHoverLink_1(false)}
-								onClick={() => clickSfx.play()}
 							>
 								contact@dadangdut33.codes{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_1 ? "visible" : "hidden"}>
@@ -87,12 +75,8 @@ export default function BottomTest() {
 								target={"_blank"}
 								rel='noopener noreferrer'
 								className='no-decoration'
-								onMouseEnter={() => {
-									hoverSfx.play();
-									setHoverLink_2(true);
-								}}
+								onMouseEnter={() => setHoverLink_2(true)}
 								onMouseLeave={() => setHoverLink_2(false)}
-								onClick={() => clickSfx.play()}
 							>
 								Dadangdut33{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_2 ? "visible" : "hidden"}>
@@ -107,12 +91,8 @@ export default function BottomTest() {
 								target={"_blank"}
 								rel='noopener noreferrer'
 								className='no-decoration'
-								onMouseEnter={() => {
-									hoverSfx.play();
-									setHoverLink_3(true);
-								}}
+								onMouseEnter={() => setHoverLink_3(true)}
 								onMouseLeave={() => setHoverLink_3(false)}
-								onClick={() => clickSfx.play()}
 							>
 								Fauzan Farhan Antoro{" "}
 								<motion.span variants={linkFadeVariants} initial='hidden' animate={hoverLink_3 ? "visible" : "hidden"}>
