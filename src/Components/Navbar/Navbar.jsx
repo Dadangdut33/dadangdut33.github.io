@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
-export default function Header() {
+export default function Navbar() {
 	const [showState, setShow] = useState(false);
 
 	const [before, setBefore] = useState("/#");

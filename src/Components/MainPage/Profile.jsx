@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import TypeWriter from "../Cosmetics/TypeWriter";
-export default function MainPage() {
+export default function Profile() {
 	const [btnClass, setBtnClass] = useState("btn btn-primary pulse-animation");
 
 	const fadeFromTop = {

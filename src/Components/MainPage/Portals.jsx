@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-export default function MainPage() {
+export default function Portals() {
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: true,
 		rootMargin: "0px 0px -300px",

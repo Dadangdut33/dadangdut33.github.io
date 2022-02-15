@@ -2,7 +2,7 @@ import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
-export default function BottomTest() {
+export default function Contact() {
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: true,
 		rootMargin: "-270px 0px",

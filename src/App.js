@@ -3,10 +3,10 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./css/index.css";
 import "./css/animation.css";
-import Header from "./Components/Header/Header.jsx";
-import MainPage from "./Components/MainPage/Profile";
+import Navbar from "./Components/Navbar/Navbar.jsx";
+import Profile from "./Components/MainPage/Profile";
 import AboutMe from "./Components/MainPage/About";
-import Projects from "./Components/MainPage/Projects";
+import Portals from "./Components/MainPage/Portals";
 import Contact from "./Components/MainPage/Contact";
 import MouseHover from "./Components/Cosmetics/MouseHover";
 import RandomDots from "./Components/Cosmetics/RandomDots";
@@ -16,11 +16,11 @@ function App() {
 		<>
 			<RandomDots />
 			<MouseHover />
-			<Header />
+			<Navbar />
 			<main className='App'>
-				<MainPage />
+				<Profile />
 				<AboutMe />
-				<Projects />
+				<Portals />
 				<Contact />
 			</main>
 		</>

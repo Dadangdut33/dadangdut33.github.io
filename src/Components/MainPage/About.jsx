@@ -1,7 +1,7 @@
 import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-export default function MainPage() {
+export default function About() {
 	const [contentRef, contentInView] = useInView({
 		triggerOnce: true,
 		rootMargin: "-250px 0px",
