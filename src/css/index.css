@@ -39,6 +39,10 @@ span.anchor {
     visibility: hidden;
 }
 
+span.anchor#projects {
+    top: -150px;
+}
+
 .dots-bg {
     z-index: -1;
 }
@@ -55,37 +59,12 @@ span.anchor {
     background-color: #1a1e21;
 }
 
-.tiny-icon {
-    display: inline-block;
-}
-
-.tiny-icon:hover {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-    animation: bigger 0.1s ease-in-out;
-}
-
-span.anchor#projects {
-    top: -150px;
-}
-
-.no-decoration {
-    text-decoration: none !important;
-}
-
 .App {
     flex: 1 0 auto;
 }
 
-#lightSwitch {
-    transform: scale(1.1);
-}
-
-.darkmode-toggler {
-    position: fixed;
-    top: 3px;
-    z-index: 99999;
-    right: 10px;
+.no-decoration {
+    text-decoration: none !important;
 }
 
 .hidden {
@@ -156,36 +135,8 @@ span.anchor#projects {
     transform-origin: bottom left;
 }
 
-
 .subtle-text {
     color: #878787;
-}
-
-.navbar {
-    transition: ease-in 0.5s;
-}
-
-.center-flex-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.flex-dir-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-dir-row-2 {
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-dir-row .content {
-    padding: 0 1rem;
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 .content-outline {
@@ -198,6 +149,38 @@ span.anchor#projects {
     text-decoration-color: rgb(135, 196, 55);
     text-decoration-thickness: 0.5px;
     text-underline-offset: 0.1em;
+}
+
+/* ========================= */
+/* navbar */
+.navbar {
+    transition: ease-in 0.5s;
+}
+
+#lightSwitch {
+    transform: scale(1.1);
+}
+
+.darkmode-toggler {
+    position: fixed;
+    top: 3px;
+    z-index: 99999;
+    right: 10px;
+}
+
+.flex-dir-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-dir-row.center {
+    justify-content: center;
+}
+
+.flex-dir-row .content {
+    padding: 0 1rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .justify {
@@ -214,13 +197,12 @@ span.anchor#projects {
     flex-direction: column;
 }
 
-.pad-small {
-    padding: 0.25rem;
+.flex-dir-column.center {
+    justify-content: center;
 }
 
-.ko-fi-logo {
-    margin-left: 0.25rem;
-    margin-bottom: 3px;
+.pad-small {
+    padding: 0.25rem;
 }
 
 .center {
@@ -237,6 +219,41 @@ span.anchor#projects {
     text-align: center;
 }
 
+.logo-main {
+    width: 220px;
+}
+
+.tooltip-img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* ========================= */
+/* profile */
+.tiny-icon {
+    display: inline-block;
+}
+
+.tiny-icon:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    animation: bigger 0.1s ease-in-out;
+}
+
+.center-flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ko-fi-logo {
+    margin-left: 0.25rem;
+    margin-bottom: 3px;
+}
+
+/* ========================= */
+/* profile */
 .about-me {
     margin-right: auto;
     margin-left: auto;
@@ -248,6 +265,8 @@ span.anchor#projects {
     position: absolute;
 }
 
+/* ========================= */
+/* contact */
 .contact-me {
     margin-right: auto;
     margin-left: auto;
@@ -259,6 +278,8 @@ span.anchor#projects {
     position: absolute;
 }
 
+/* ========================= */
+/* portals/projects */
 .projects {
     margin-right: auto;
     margin-left: auto;
@@ -269,15 +290,7 @@ span.anchor#projects {
     position: absolute;
 }
 
-.logo-main {
-    width: 220px;
-}
-
-.tooltip-img {
-    max-width: 90%;
-    height: auto;
-}
-
+/* ========================= */
 /* card */
 .card-img {
     display: block;
@@ -289,6 +302,16 @@ span.anchor#projects {
     min-width: 150px;
 }
 
+.card-wrapper {
+    max-width: 25rem !important;
+    margin: 1rem;
+}
+
+.card-list {
+    width: 100% !important;
+}
+
+/* ========================= */
 /* arrow goto top and bottom */
 #btn-goto-top {
     position: fixed;
@@ -304,6 +327,7 @@ span.anchor#projects {
     z-index: 99999;
 }
 
+/* ========================= */
 /* typewriter */
 .cursor {
     position: fixed;
@@ -359,6 +383,7 @@ span.cursor.typing {
     }
 }
 
+/* ========================= */
 /* media-query */
 @media only screen and (max-width: 850px) {
     .justify {
@@ -442,6 +467,7 @@ span.cursor.typing {
     }
 }
 
+/* ========================= */
 /* custom scrollbar - only on desktop view */
 @media only screen and (min-device-width: 575px) {
 

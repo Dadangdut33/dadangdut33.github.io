@@ -31,11 +31,11 @@ export default function Navbar() {
 		const checkScroll = () => {
 			setShow(true);
 
-			if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 200) {
+			if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 300) {
 				clearActiveHeader();
 				aboutNav.classList.add("active");
 				setBefore("/#");
-				setAfter("/#projects");
+				setAfter("/#portals");
 				btnGotoTop.classList.remove("slide-in-top-disappear-animation");
 				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
 				btnGotoTop.classList.add("slide-in-top-animation");
@@ -44,7 +44,7 @@ export default function Navbar() {
 
 			if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 600) {
 				clearActiveHeader();
-				projectsNav.classList.add("active");
+				portalsNav.classList.add("active");
 				setBefore("/#about-me");
 				setAfter("/#contact-me");
 				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
@@ -54,7 +54,7 @@ export default function Navbar() {
 			if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
 				clearActiveHeader();
 				contactNav.classList.add("active");
-				setBefore("/#projects");
+				setBefore("/#portals");
 				btnGotoBottom.classList.remove("slide-in-bottom-animation");
 				btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
 			}
@@ -123,12 +123,12 @@ export default function Navbar() {
 		var componentHeight = aboutComp.offsetHeight;
 
 		var aboutNav = document.getElementById("about-nav");
-		var projectsNav = document.getElementById("projects-nav");
+		var portalsNav = document.getElementById("portals-nav");
 		var contactNav = document.getElementById("contact-nav");
 
 		const clearActiveHeader = () => {
 			aboutNav.classList.remove("active");
-			projectsNav.classList.remove("active");
+			portalsNav.classList.remove("active");
 			contactNav.classList.remove("active");
 		};
 
@@ -205,8 +205,8 @@ export default function Navbar() {
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a className='nav-link' href={"#projects"} style={{ cursor: showState ? "pointer" : "default" }} id='projects-nav'>
-									Projects
+								<a className='nav-link' href={"#portals"} style={{ cursor: showState ? "pointer" : "default" }} id='portals-nav'>
+									Portals
 								</a>
 							</li>
 							<li className='nav-item'>
