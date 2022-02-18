@@ -1,3 +1,12 @@
+# About
+My personal profile website made with react.js. The theme is onepagescroll.
+
+# Links
+- [The Profile Page](https://dadangdut33.codes)
+- [Blog](https://blog.dadangdut33.codes)
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
