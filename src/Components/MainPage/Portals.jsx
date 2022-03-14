@@ -24,18 +24,15 @@ export default function Portals() {
 	};
 
 	return (
-		<section className='center-flex-column' id='portals-section'>
-			<div className='center-horizontal-vertical'>
+		<section className='d-flex flex-column justify-content-center' id='portals-section'>
+			<div className='m-auto justify'>
 				<span className='anchor' id='portals' style={{ marginTop: "-100px" }}></span>
-				<h1 className='text-center header-portals' ref={contentRef} style={{ paddingBottom: "5px" }}>
-					<span>Portals</span>
-					<span
-						className={contentInView ? "display-1 text-center underline-smooth origin-left show-from-right" : "display-1 text-center underline-smooth origin-left"}
-						style={{ marginTop: "0" }}
-					></span>
+				<h1 className='text-center' ref={contentRef} style={{ paddingBottom: "5px" }}>
+					<h1 className='display-1'>Portals</h1>
+					<span className={contentInView ? "underline-smooth origin-left show-from-right" : "underline-smooth origin-left"}></span>
 				</h1>
-				<div className='flex-dir-row center'>
-					<motion.div className='col-sm-6 card-wrapper' variants={fadeVar} custom={0} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
+				<div className='d-flex flex-column d-lg-flex flex-lg-row text-center portal-card'>
+					<motion.div className='col-lg-6 card-wrapper' variants={fadeVar} custom={0} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
 						<div className='card card-list'>
 							<div className='card-body bg-light'>
 								<h5 className='card-title'>
@@ -48,7 +45,7 @@ export default function Portals() {
 							</div>
 						</div>
 					</motion.div>
-					<motion.div className='col-sm-6 card-wrapper' variants={fadeVar} custom={1} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
+					<motion.div className='col-lg-6 card-wrapper' variants={fadeVar} custom={1} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
 						<div className='card card-list'>
 							<div className='card-body bg-light'>
 								<h5 className='card-title'>
@@ -66,8 +63,8 @@ export default function Portals() {
 					</motion.div>
 				</div>
 
-				<div className='flex-dir-row center'>
-					<motion.div className='col-sm-6 card-wrapper' variants={fadeVar} custom={2} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
+				<div className='d-flex flex-column d-lg-flex flex-lg-row text-center portal-card'>
+					<motion.div className='col-lg-6 card-wrapper' variants={fadeVar} custom={3} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
 						<div className='card card-list'>
 							<div className='card-body bg-light'>
 								<h5 className='card-title'>

@@ -43,15 +43,15 @@ export default function Contact() {
 	};
 
 	return (
-		<section className='flex-dir-column' id='contact-me-section'>
-			<div className='center-horizontal-vertical'>
+		<section className='d-flex flex-column justify-content-center' id='contact-me-section'>
+			<div className='m-auto'>
 				<span className='anchor' id='contact-me'></span>
-				<h1 className='display-1 text-center'>
-					Contact Me
-					<span className={contentInView ? "display-1 text-center underline-smooth origin-center show-from-middle" : "display-1 text-center underline-smooth origin-center"}></span>
+				<h1 className='text-center'>
+					<h1 className='display-1'>Contact Me</h1>
+					<span className={contentInView ? "underline-smooth origin-center show-from-middle" : "underline-smooth origin-center"}></span>
 				</h1>
-				<motion.div className='contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
-					<div className='center-horizontal-vertical'>
+				<motion.div className='section-div contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
+					<div className='m-auto'>
 						<p>
 							<i className='bi bi-envelope'></i>{" "}
 							<a
