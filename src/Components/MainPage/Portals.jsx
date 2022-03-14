@@ -1,11 +1,28 @@
-import React from "react";
+import { useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export default function Portals() {
+	const ref = useRef();
 	const [contentRef, contentInView] = useInView({
+		triggerOnce: false,
+		rootMargin: "0px 0px -300px",
+	});
+
+	const [contentRef2, contentInView2] = useInView({
 		triggerOnce: true,
 		rootMargin: "0px 0px -300px",
 	});
+
+	const setRefs = useCallback(
+		(node) => {
+			// Ref's from useRef needs to have the node assigned to `current`
+			ref.current = node;
+			// Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+			contentRef(node);
+			contentRef2(node);
+		},
+		[contentRef, contentRef2]
+	);
 
 	const fadeVar = {
 		hidden: {
@@ -67,14 +84,20 @@ export default function Portals() {
 		<section className='d-flex flex-column justify-content-center' id='portals-section'>
 			<div className='m-auto justify'>
 				<span className='anchor' id='portals' style={{ marginTop: "-100px" }}></span>
-				<h1 className='text-center' ref={contentRef} style={{ paddingBottom: "5px" }}>
+				<h1 className='text-center' ref={setRefs} style={{ paddingBottom: "5px" }}>
 					<h1 className='display-1'>Portals</h1>
 					<span className={contentInView ? "underline-smooth origin-left show-from-right" : "underline-smooth origin-left"}></span>
 				</h1>
-				<div className='d-flex flex-column d-lg-flex flex-lg-row justify-content-center text-center'>
+				<motion.div
+					className='d-flex flex-column d-lg-flex flex-lg-row justify-content-center text-center'
+					variants={fadeVar}
+					custom={0}
+					initial={"hidden"}
+					animate={contentInView2 ? "visible" : "hidden"}
+				>
 					{content_1.map((content, i) => {
 						return (
-							<motion.div className='col-lg-6 card-wrapper' variants={fadeVar} custom={i} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
+							<div className='col-lg-6 card-wrapper' key={i}>
 								<div className='card card-list'>
 									<div className='card-body bg-light'>
 										<h5 className='card-title'>
@@ -91,15 +114,21 @@ export default function Portals() {
 										)}
 									</div>
 								</div>
-							</motion.div>
+							</div>
 						);
 					})}
-				</div>
+				</motion.div>
 
-				<div className='d-flex flex-column d-lg-flex flex-lg-row justify-content-center text-center'>
+				<motion.div
+					className='d-flex flex-column d-lg-flex flex-lg-row justify-content-center text-center'
+					variants={fadeVar}
+					custom={1}
+					initial={"hidden"}
+					animate={contentInView2 ? "visible" : "hidden"}
+				>
 					{content_2.map((content, i) => {
 						return (
-							<motion.div className='col-lg-6 card-wrapper' variants={fadeVar} custom={i + 2} initial={"hidden"} animate={contentInView ? "visible" : "hidden"}>
+							<div className='col-lg-6 card-wrapper' key={i}>
 								<div className='card card-list'>
 									<div className='card-body bg-light'>
 										<h5 className='card-title'>
@@ -116,10 +145,10 @@ export default function Portals() {
 										)}
 									</div>
 								</div>
-							</motion.div>
+							</div>
 						);
 					})}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

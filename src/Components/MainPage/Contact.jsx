@@ -1,12 +1,29 @@
+import { useState, useRef, useCallback } from "react";
 import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 export default function Contact() {
+	const ref = useRef();
 	const [contentRef, contentInView] = useInView({
+		triggerOnce: false,
+		rootMargin: "-270px 0px",
+	});
+
+	const [contentRef2, contentInView2] = useInView({
 		triggerOnce: true,
 		rootMargin: "-270px 0px",
 	});
+
+	const setRefs = useCallback(
+		(node) => {
+			// Ref's from useRef needs to have the node assigned to `current`
+			ref.current = node;
+			// Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+			contentRef(node);
+			contentRef2(node);
+		},
+		[contentRef, contentRef2]
+	);
 
 	const contentVariants = {
 		hidden: {
@@ -50,7 +67,7 @@ export default function Contact() {
 					<h1 className='display-1'>Contact Me</h1>
 					<span className={contentInView ? "underline-smooth origin-center show-from-middle" : "underline-smooth origin-center"}></span>
 				</h1>
-				<motion.div className='section-div contact-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
+				<motion.div className='section-div contact-me' ref={setRefs} initial='hidden' animate={contentInView2 ? "visible" : "hidden"} variants={contentVariants}>
 					<div className='m-auto'>
 						<p>
 							<i className='bi bi-envelope'></i>{" "}

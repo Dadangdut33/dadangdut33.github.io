@@ -4,7 +4,6 @@ import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 export default function Navbar() {
 	const [showState, setShow] = useState(false);
-
 	const [before, setBefore] = useState("/#");
 	const [after, setAfter] = useState("/#");
 
@@ -31,7 +30,7 @@ export default function Navbar() {
 		const checkScroll = () => {
 			setShow(true);
 
-			if (window.scrollY > componentHeight - 200 && window.scrollY < componentHeight + 300) {
+			if (window.scrollY > componentHeight - 300 && window.scrollY < componentHeight + 300) {
 				clearActiveHeader();
 				aboutNav.classList.add("active");
 				setBefore("/#");
@@ -63,11 +62,11 @@ export default function Navbar() {
 		const checkBgColor = () => {
 			// show/hide back to top btn and check the bg mode
 			if (document.body.classList.contains("bg-dark")) {
-				btnGotoTop.className = "btn btn-outline-light btn-rounded slide-in-top-animation";
-				btnGotoBottom.className = "btn btn-outline-light btn-rounded slide-in-bottom-animation";
+				btnGotoTop.classList.replace("btn-outline-dark", "btn-outline-light");
+				btnGotoBottom.classList.replace("btn-outline-dark", "btn-outline-light");
 			} else {
-				btnGotoTop.className = "btn btn-outline-dark btn-rounded slide-in-top-animation";
-				btnGotoBottom.className = "btn btn-outline-dark btn-rounded slide-in-bottom-animation";
+				btnGotoTop.classList.replace("btn-outline-light", "btn-outline-dark");
+				btnGotoBottom.classList.replace("btn-outline-light", "btn-outline-dark");
 			}
 		};
 
@@ -83,16 +82,6 @@ export default function Navbar() {
 				}
 			}
 		};
-
-		// check on startup
-		if (window.scrollY > 400) {
-			checkScroll(true);
-			checkBgColor();
-			darkModeTogglerPosition();
-		} else {
-			btnGotoTop.style.display = "none";
-			btnGotoBottom.style.display = "none";
-		}
 
 		const displayBtnBackToTop = (ev) => {
 			if (ev.type === "animationend") {
@@ -113,9 +102,6 @@ export default function Navbar() {
 				}
 			}
 		};
-
-		btnGotoTop.addEventListener("animationend", displayBtnBackToTop, false);
-		btnGotoBottom.addEventListener("animationend", displayBtnGotoBottom, false);
 
 		// navbar
 		// all section components have the same height so only need 1
@@ -160,8 +146,20 @@ export default function Navbar() {
 		};
 
 		// listeners
+		btnGotoTop.addEventListener("animationend", displayBtnBackToTop, false);
+		btnGotoBottom.addEventListener("animationend", displayBtnGotoBottom, false);
 		window.addEventListener("resize", resizeListener);
 		window.addEventListener("scroll", onscrollListener);
+
+		// check on startup
+		if (window.scrollY > 400) {
+			checkScroll();
+			checkBgColor();
+			darkModeTogglerPosition();
+		} else {
+			btnGotoTop.style.display = "none";
+			btnGotoBottom.style.display = "none";
+		}
 
 		return () => {
 			// cleanup
@@ -200,17 +198,17 @@ export default function Navbar() {
 					<div className='collapse navbar-collapse' id='navbarNavDropdown'>
 						<ul className='navbar-nav me-auto' style={{ fontSize: "20px" }}>
 							<li className='nav-item'>
-								<a className='nav-link' aria-current='page' href={"#about-me"} style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
+								<a className='nav-link' aria-current='page' href='#about-me' style={{ cursor: showState ? "pointer" : "default" }} id='about-nav'>
 									About
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a className='nav-link' href={"#portals"} style={{ cursor: showState ? "pointer" : "default" }} id='portals-nav'>
+								<a className='nav-link' href='#portals' style={{ cursor: showState ? "pointer" : "default" }} id='portals-nav'>
 									Portals
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a className='nav-link' href={"#contact-me"} style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
+								<a className='nav-link' href='#contact-me' style={{ cursor: showState ? "pointer" : "default" }} id='contact-nav'>
 									Contact
 								</a>
 							</li>
@@ -219,10 +217,10 @@ export default function Navbar() {
 				</div>
 			</motion.nav>
 			<div>
-				<a href={before} className={"btn btn-outline-light btn-rounded slide-in-top-disappear-animation"} id='btn-goto-top'>
+				<a href={before} className='btn btn-outline-light btn-rounded slide-in-top-disappear-animation' id='btn-goto-top'>
 					<i className='bi bi-arrow-up'></i>
 				</a>
-				<a href={after} className={"btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation"} id='btn-goto-bottom'>
+				<a href={after} className='btn btn-outline-light btn-rounded slide-in-bottom-disappear-animation' id='btn-goto-bottom'>
 					<i className='bi bi-arrow-down'></i>
 				</a>
 			</div>

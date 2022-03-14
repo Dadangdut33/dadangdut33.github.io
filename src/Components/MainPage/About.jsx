@@ -1,11 +1,29 @@
+import { useRef, useCallback } from "react";
 import ReactTooltip from "react-tooltip";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export default function About() {
+	const ref = useRef();
 	const [contentRef, contentInView] = useInView({
+		triggerOnce: false,
+		rootMargin: "-250px 0px",
+	});
+
+	const [contentRef2, contentInView2] = useInView({
 		triggerOnce: true,
 		rootMargin: "-250px 0px",
 	});
+
+	const setRefs = useCallback(
+		(node) => {
+			// Ref's from useRef needs to have the node assigned to `current`
+			ref.current = node;
+			// Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+			contentRef(node);
+			contentRef2(node);
+		},
+		[contentRef, contentRef2]
+	);
 
 	const contentVariants = {
 		hidden: {
@@ -32,7 +50,7 @@ export default function About() {
 					<h1 className='display-1'>A Little More About Me</h1>
 					<span className={contentInView ? "underline-smooth origin-right show-from-left" : "underline-smooth origin-right"}></span>
 				</h1>
-				<motion.div className='section-div about-me' ref={contentRef} initial='hidden' animate={contentInView ? "visible" : "hidden"} variants={contentVariants}>
+				<motion.div className='section-div about-me' ref={setRefs} initial='hidden' animate={contentInView2 ? "visible" : "hidden"} variants={contentVariants}>
 					<p className='subtle-text'>
 						At first, I have never thought of becoming a programmer because I had a feeling that it's a{" "}
 						<strong data-tip data-for='imgPopup-1' className='subtle-link'>
