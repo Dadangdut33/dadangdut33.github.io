@@ -134,6 +134,10 @@ span.anchor {
 
 /* ========================= */
 /* profile */
+#top-div {
+    margin-top: -6.5rem;
+}
+
 .center-flex-column {
     display: flex;
     justify-content: center;
@@ -221,7 +225,18 @@ span.anchor {
     span.anchor#portals {
         top: -140px;
     }
+
+    #top-div {
+        margin-top: -25rem;
+    }
 }
+
+@media only screen and (max-device-width: 320px) {
+    #top-div {
+        margin-top: -40rem;
+    }
+}
+
 
 @media only screen and (max-width: 575px) {
     .underline-smooth {

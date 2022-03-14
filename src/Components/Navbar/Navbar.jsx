@@ -30,7 +30,7 @@ export default function Navbar() {
 		const checkScroll = () => {
 			setShow(true);
 
-			if (window.scrollY > componentHeight - 300 && window.scrollY < componentHeight + 300) {
+			if (window.scrollY > componentHeight - 300 && window.scrollY < componentHeight + 800) {
 				clearActiveHeader();
 				aboutNav.classList.add("active");
 				setBefore("/#");

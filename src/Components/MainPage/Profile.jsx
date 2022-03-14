@@ -25,7 +25,7 @@ export default function Profile() {
 
 	return (
 		<section className='center-flex-column' id='top'>
-			<motion.div variants={fadeFromTop} initial={"hidden"} animate={"visible"} className='mx-auto' id='top-div' style={{ marginTop: "-6.5rem" }}>
+			<motion.div variants={fadeFromTop} initial={"hidden"} animate={"visible"} className='mx-auto' id='top-div'>
 				<div className='d-flex flex-column d-sm-flex flex-sm-row'>
 					<div className='d-flex flex-column'>
 						<img src='./logo512.png' alt='Logo' className='logo-main profile-content mx-auto' />{" "}
