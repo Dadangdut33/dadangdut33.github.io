@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./css/index.css";
 import "./css/animation.css";
+import { useDeviceSelectors } from "react-device-detect";
 import PageOpen from "./Components/Cosmetics/PageOpen";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Profile from "./Components/MainPage/Profile";
@@ -13,11 +14,13 @@ import MouseHover from "./Components/Cosmetics/MouseHover";
 import RandomDots from "./Components/Cosmetics/RandomDots";
 
 function App() {
+	const [selectors] = useDeviceSelectors(window.navigator.userAgent);
+	const { isMobile } = selectors;
 	return (
 		<>
 			<PageOpen />
 			<RandomDots />
-			<MouseHover />
+			<MouseHover isMobile={isMobile} />
 			<Navbar />
 			<main className='App'>
 				<Profile />

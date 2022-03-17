@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useDeviceSelectors } from "react-device-detect";
-export default function MouseHover() {
-	const [selectors] = useDeviceSelectors(window.navigator.userAgent);
-	const { isMobile } = selectors;
-
+export default function MouseHover({ isMobile }) {
 	const cursorX = useMotionValue(-100);
 	const cursorY = useMotionValue(-100);
 

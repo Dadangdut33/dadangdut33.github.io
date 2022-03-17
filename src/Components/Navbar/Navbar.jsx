@@ -5,7 +5,7 @@ import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 export default function Navbar() {
 	const [showState, setShow] = useState(false);
 	const [before, setBefore] = useState("/#");
-	const [after, setAfter] = useState("/#");
+	const [after, setAfter] = useState("/#about-me");
 
 	const fadeFromTop = {
 		hidden: {
@@ -26,38 +26,6 @@ export default function Navbar() {
 		const btnGotoTop = document.getElementById("btn-goto-top");
 		const btnGotoBottom = document.getElementById("btn-goto-bottom");
 		const darkModeToggler = document.querySelector(".darkmode-toggler");
-
-		const checkScroll = () => {
-			setShow(true);
-
-			if (window.scrollY > componentHeight - 300 && window.scrollY < componentHeight + 800) {
-				clearActiveHeader();
-				aboutNav.classList.add("active");
-				setBefore("/#");
-				setAfter("/#portals");
-				btnGotoTop.classList.remove("slide-in-top-disappear-animation");
-				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
-				btnGotoTop.classList.add("slide-in-top-animation");
-				btnGotoBottom.classList.add("slide-in-bottom-animation");
-			}
-
-			if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 600) {
-				clearActiveHeader();
-				portalsNav.classList.add("active");
-				setBefore("/#about-me");
-				setAfter("/#contact-me");
-				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
-				btnGotoBottom.classList.add("slide-in-bottom-animation");
-			}
-
-			if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
-				clearActiveHeader();
-				contactNav.classList.add("active");
-				setBefore("/#portals");
-				btnGotoBottom.classList.remove("slide-in-bottom-animation");
-				btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
-			}
-		};
 
 		const checkBgColor = () => {
 			// show/hide back to top btn and check the bg mode
@@ -103,6 +71,36 @@ export default function Navbar() {
 			}
 		};
 
+		const winScrollCheck = () => {
+			if (window.scrollY > componentHeight - 300 && window.scrollY < componentHeight + 800) {
+				clearActiveHeader();
+				aboutNav.classList.add("active");
+				setBefore("/#");
+				setAfter("/#portals");
+				btnGotoTop.classList.remove("slide-in-top-disappear-animation");
+				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
+				btnGotoTop.classList.add("slide-in-top-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-animation");
+			}
+
+			if (window.scrollY > componentHeight * 2 - 200 && window.scrollY < componentHeight * 2 + 600) {
+				clearActiveHeader();
+				portalsNav.classList.add("active");
+				setBefore("/#about-me");
+				setAfter("/#contact-me");
+				btnGotoBottom.classList.remove("slide-in-bottom-disappear-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-animation");
+			}
+
+			if (window.scrollY > componentHeight * 3 - 200 && window.scrollY < componentHeight * 3 + 200) {
+				clearActiveHeader();
+				contactNav.classList.add("active");
+				setBefore("/#portals");
+				btnGotoBottom.classList.remove("slide-in-bottom-animation");
+				btnGotoBottom.classList.add("slide-in-bottom-disappear-animation");
+			}
+		};
+
 		// navbar
 		// all section components have the same height so only need 1
 		var aboutComp = document.getElementById("about-me-section");
@@ -125,7 +123,7 @@ export default function Navbar() {
 
 		const onscrollListener = () => {
 			if (window.scrollY > 400) {
-				checkScroll();
+				winScrollCheck();
 				darkModeTogglerPosition();
 			} else {
 				clearActiveHeader(); // clear active header
@@ -153,7 +151,7 @@ export default function Navbar() {
 
 		// check on startup
 		if (window.scrollY > 400) {
-			checkScroll();
+			winScrollCheck();
 			checkBgColor();
 			darkModeTogglerPosition();
 		} else {

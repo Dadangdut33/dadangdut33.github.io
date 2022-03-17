@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 export default function PageOpen() {
 	const blackBox = {
 		initial: {
@@ -29,8 +29,6 @@ export default function PageOpen() {
 		setTimeout(() => {
 			document.body.style.overflow = "auto";
 		}, 3000);
-
-		return () => {};
 	}, []);
 
 	return (
