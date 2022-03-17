@@ -72,6 +72,8 @@ export default function Navbar() {
 		};
 
 		const winScrollCheck = () => {
+			setShow(true); // show navbar
+
 			if (window.scrollY > componentHeight - 300 && window.scrollY < componentHeight + 800) {
 				clearActiveHeader();
 				aboutNav.classList.add("active");
