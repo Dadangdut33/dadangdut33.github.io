@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 export default function TypeWriter({ typingDelay, erasingDelay, newTextDelay, textArray, loop }) {
 	const [states, setStates] = useState([]);

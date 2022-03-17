@@ -1,9 +1,9 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import darkLogo from "./dark.svg";
 import lightLogo from "./light.svg";
 export default function DarkModeToggle() {
-	const [checked, setChecked] = React.useState(localStorage.getItem("bgmode") === "dark" ? true : false);
-	const [logo, setLogo] = React.useState(checked ? darkLogo : lightLogo);
+	const [checked, setChecked] = useState(localStorage.getItem("bgmode") === "dark" ? true : false);
+	const [logo, setLogo] = useState(checked ? darkLogo : lightLogo);
 
 	const setDarkMode = () => {
 		setChecked(true);
@@ -75,7 +75,7 @@ export default function DarkModeToggle() {
 		return window.matchMedia("(prefers-color-scheme: dark)").matches;
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		var currentMode = localStorage.getItem("bgmode");
 		if (currentMode == null) {
 			currentMode = getSystemDefaultTheme();

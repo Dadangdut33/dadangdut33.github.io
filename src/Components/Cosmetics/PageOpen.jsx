@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 export default function PageOpen() {
 	const blackBox = {
 		initial: {
@@ -14,6 +15,23 @@ export default function PageOpen() {
 			},
 		},
 	};
+
+	useEffect(() => {
+		// check url, must not contain any hashtag
+		if (window.location.hash) {
+			window.location.href = window.location.href.split("#")[0];
+		}
+
+		// disable scroll for the whole page
+		document.body.style.overflow = "hidden";
+
+		// after 3 seconds enable scroll
+		setTimeout(() => {
+			document.body.style.overflow = "auto";
+		}, 3000);
+
+		return () => {};
+	}, []);
 
 	return (
 		<motion.div className='fixed-bottom pageopen-bg d-flex center justify-content-center w-100 bg-black' initial='initial' animate='animate' variants={blackBox}>

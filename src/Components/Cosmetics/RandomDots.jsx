@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 export default function RandomDots() {
 	// random dots appearing on the bg of the screen
