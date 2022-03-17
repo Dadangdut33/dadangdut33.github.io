@@ -37,6 +37,10 @@ footer {
     z-index: -1;
 }
 
+.pageopen-bg {
+    z-index: 999999;
+}
+
 /* ========================= */
 /* arrow goto top and bottom */
 #btn-goto-top {

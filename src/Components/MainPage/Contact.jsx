@@ -29,13 +29,13 @@ export default function Contact() {
 		hidden: {
 			height: 0,
 			transition: {
-				duration: 0.6,
+				duration: 1,
 			},
 		},
 		visible: {
 			height: "fit-content",
 			transition: {
-				duration: 0.6,
+				duration: 1,
 			},
 		},
 	};

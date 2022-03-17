@@ -1,3 +1,24 @@
+.text-page-open {
+    opacity: 0;
+    animation: fadein-pageopen 2s ease-out;
+    animation-delay: .2s;
+}
+
+@keyframes fadein-pageopen {
+    0% {
+        opacity: 0;
+    }
+
+    40%,
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 /* ========================= */
 /* mouse cursor */
 .cursor {

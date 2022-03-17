@@ -3,6 +3,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./css/index.css";
 import "./css/animation.css";
+import PageOpen from "./Components/Cosmetics/PageOpen";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Profile from "./Components/MainPage/Profile";
 import AboutMe from "./Components/MainPage/About";
@@ -14,6 +15,7 @@ import RandomDots from "./Components/Cosmetics/RandomDots";
 function App() {
 	return (
 		<>
+			<PageOpen />
 			<RandomDots />
 			<MouseHover />
 			<Navbar />

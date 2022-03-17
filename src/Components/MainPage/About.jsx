@@ -30,14 +30,14 @@ export default function About() {
 			opacity: 0,
 			height: 0,
 			transition: {
-				duration: 0.8,
+				duration: 1.2,
 			},
 		},
 		visible: {
 			opacity: 1,
 			height: "fit-content",
 			transition: {
-				duration: 0.8,
+				duration: 1.2,
 			},
 		},
 	};

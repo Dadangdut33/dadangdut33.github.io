@@ -28,14 +28,14 @@ export default function Portals() {
 		hidden: {
 			scale: 0,
 			transition: {
-				duration: 0.5,
+				duration: 1,
 			},
 		},
 		visible: (i) => ({
 			scale: 1,
 			transition: {
 				delay: i * 0.3,
-				duration: 0.5,
+				duration: 1,
 			},
 		}),
 	};

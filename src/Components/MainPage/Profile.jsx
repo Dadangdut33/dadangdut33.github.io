@@ -19,6 +19,7 @@ export default function Profile() {
 			transition: {
 				type: "spring",
 				stiffness: 70,
+				delay: 2.8,
 			},
 		},
 	};
