@@ -170,6 +170,10 @@ span.anchor {
     margin-bottom: 3px;
 }
 
+.ko-fi-bottom.text-light {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
 /* ========================= */
 /* Div inside some of the sections */
 /* absolute */

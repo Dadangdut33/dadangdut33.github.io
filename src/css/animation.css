@@ -2,6 +2,7 @@
     opacity: 0;
     animation: fadein-pageopen 2s ease-out;
     animation-delay: .2s;
+    color: white;
 }
 
 @keyframes fadein-pageopen {
