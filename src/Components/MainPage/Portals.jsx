@@ -44,7 +44,7 @@ export default function Portals() {
 		{
 			title: "My Blog",
 			icon: "bi bi-pen",
-			link: "https://dadangdut33.codes",
+			link: "https://blog.dadangdut33.codes",
 			link_text: "blog.dadangdut33.codes",
 			text: "Place where I share some of my thoughts, ideas, and experiences.",
 		},
@@ -97,24 +97,27 @@ export default function Portals() {
 				>
 					{content_1.map((content, i) => {
 						return (
-							<div className='col-lg-6 card-wrapper' key={i}>
-								<div className='card card-list'>
-									<div className='card-body bg-light'>
-										<h5 className='card-title'>
-											<i className={content.icon}></i> {content.title}
-										</h5>
-										<p className='card-text'>{content.text}</p>
-										<a href={content.link} target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
-											{content.link_text}
-										</a>
-										{content.link2 && (
-											<a href={content.link2} target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
-												{content.link_text2}
+							<>
+								{i % 2 === 0 ? "" : null}
+								<div className='col-lg-6 card-wrapper' key={i}>
+									<div className='card card-list'>
+										<div className='card-body bg-light'>
+											<h5 className='card-title'>
+												<i className={content.icon}></i> {content.title}
+											</h5>
+											<p className='card-text'>{content.text}</p>
+											<a href={content.link} target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
+												{content.link_text}
 											</a>
-										)}
+											{content.link2 && (
+												<a href={content.link2} target={"_blank"} rel='noopener noreferrer' className='btn btn-primary'>
+													{content.link_text2}
+												</a>
+											)}
+										</div>
 									</div>
 								</div>
-							</div>
+							</>
 						);
 					})}
 				</motion.div>
